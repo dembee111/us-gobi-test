@@ -31,6 +31,9 @@ const initialDeals = {
   }
 }
 const Cart = (props) => {
+
+  const edges = props.checkout.lineItems.edges || [];
+
   let giftboxImage = "https://cdn.shopify.com/s/files/1/0098/6044/8292/files/giftbox-pic.png?v=1619688976"
   let giftscarfImage = "https://cdn.shopify.com/s/files/1/0098/6044/8292/files/giftscarf-us.png?v=1619689189"
   const [getGiftBoxQuery, { data: getGiftBoxData, error: getGiftBoxError }] = useLazyQuery(getGiftBox, {
@@ -40,7 +43,7 @@ const Cart = (props) => {
     window.location.assign(props.checkout.webUrl);
   }
 
-  const edges = props.checkout.lineItems.edges || [];
+
 
   const [deals, setDeals] = useState(initialDeals);
 
@@ -258,12 +261,10 @@ const Cart = (props) => {
               </div>
               <div className="button">
                 <button onClick={goToCheckout} className="checkout_btn"
-                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828" }}
                   disabled={!props.checkout || edges.length === 0}>checkout</button>
               </div>
               <div className={`button mobile ${optionBtn ? 'dl-none' : ''}`}>
                 <button onClick={goToCheckout} className="checkout_btn"
-                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828" }}
                   disabled={!props.checkout || edges.length === 0}>checkout</button>
               </div>
             </div>
