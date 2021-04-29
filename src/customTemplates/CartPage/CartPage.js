@@ -42,9 +42,6 @@ const Cart = (props) => {
   function goToCheckout() {
     window.location.assign(props.checkout.webUrl);
   }
-
-
-
   const [deals, setDeals] = useState(initialDeals);
 
   const [optionBtn, setOptionBtn] = useState(false);
@@ -260,10 +257,10 @@ const Cart = (props) => {
                 <span>Secure Payment</span>
               </div>
               <div className="button">
-                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn" disabled={props.checkout.subtotalPriceV2.amount === 0 || !props.checkout || edges.length === 0}>checkout</button>
               </div>
               <div className={`button mobile ${optionBtn ? 'dl-none' : ''}`}>
-                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn" disabled={props.checkout.subtotalPriceV2.amount === 0 || !props.checkout || edges.length === 0}>checkout</button>
               </div>
             </div>
           </div>
