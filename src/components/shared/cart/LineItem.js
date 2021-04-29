@@ -115,10 +115,10 @@ function LineItem(props) {
             {props.isGiftItem || isFreeGiftCard(props.lineItem.node) ? (
               <div className="ajaxcart__product-image navigable">
                 {props.lineItem &&
-                props.lineItem.node &&
-                props.lineItem.node.variant &&
-                props.lineItem.node.variant.image &&
-                props.lineItem.node.variant.image.src ? (
+                  props.lineItem.node &&
+                  props.lineItem.node.variant &&
+                  props.lineItem.node.variant.image &&
+                  props.lineItem.node.variant.image.src ? (
                   <img
                     alt={props.lineItem.node.variant.image.altText}
                     data-sizes="auto"
@@ -135,10 +135,10 @@ function LineItem(props) {
                 data-open-accessibility-text-original="16px"
               >
                 {props.lineItem &&
-                props.lineItem.node &&
-                props.lineItem.node.variant &&
-                props.lineItem.node.variant.image &&
-                props.lineItem.node.variant.image.src ? (
+                  props.lineItem.node &&
+                  props.lineItem.node.variant &&
+                  props.lineItem.node.variant.image &&
+                  props.lineItem.node.variant.image.src ? (
                   <img
                     alt={props.lineItem.node.variant.image.altText}
                     data-sizes="auto"
@@ -208,14 +208,14 @@ function LineItem(props) {
                 </span>
               ) : null}
               {(props.isGiftItem || isFreeGiftCard(props.lineItem.node)) &&
-              props.lineItem &&
-              props.lineItem.node &&
-              props.lineItem.node.variant &&
-              props.lineItem.node.variant.presentmentPrices &&
-              props.lineItem.node.variant.presentmentPrices.edges &&
-              props.lineItem.node.variant.presentmentPrices.edges[0] &&
-              props.lineItem.node.variant.presentmentPrices.edges[0].node &&
-              props.lineItem.node.variant.presentmentPrices.edges[0].node.price ? (
+                props.lineItem &&
+                props.lineItem.node &&
+                props.lineItem.node.variant &&
+                props.lineItem.node.variant.presentmentPrices &&
+                props.lineItem.node.variant.presentmentPrices.edges &&
+                props.lineItem.node.variant.presentmentPrices.edges[0] &&
+                props.lineItem.node.variant.presentmentPrices.edges[0].node &&
+                props.lineItem.node.variant.presentmentPrices.edges[0].node.price ? (
                 <span className="ajaxcart__price">
                   {
                     <span className="compare-at-price">
@@ -255,9 +255,9 @@ function LineItem(props) {
               ) : null}
 
               {props.lineItem.node &&
-              props.lineItem.node.variant &&
-              props.lineItem.node.variant.product &&
-              !isGiftCard(props.lineItem.node.variant.product) ? (
+                props.lineItem.node.variant &&
+                props.lineItem.node.variant.product &&
+                !isGiftCard(props.lineItem.node.variant.product) ? (
                 !props.isGiftItem ? (
                   <div className="color-title">
                     <span className="color-text">Color:</span>
@@ -284,12 +284,12 @@ function LineItem(props) {
               </span> */}
               <div className="detail">
                 {!props.isGiftItem &&
-                props.lineItem &&
-                props.lineItem.node &&
-                props.lineItem.node.variant &&
-                props.lineItem.node.variant.product &&
-                !isGiftCard(props.lineItem.node.variant.product) &&
-                !isFreeGiftCard(props.lineItem.node) ? (
+                  props.lineItem &&
+                  props.lineItem.node &&
+                  props.lineItem.node.variant &&
+                  props.lineItem.node.variant.product &&
+                  !isGiftCard(props.lineItem.node.variant.product) &&
+                  !isFreeGiftCard(props.lineItem.node) ? (
                   <ModifySize
                     lineItem={props.lineItem}
                     size={props.size}
@@ -345,10 +345,10 @@ function LineItem(props) {
 
             {!props.isGiftItem && !isFreeGiftCard(props.lineItem.node) ? (
               props.myWishlist &&
-              Array.isArray(props.myWishlist) &&
-              props.myWishlist.includes(
-                atob(props.lineItem.node.variant.product.id).replace('gid://shopify/Product/', ''),
-              ) ? (
+                Array.isArray(props.myWishlist) &&
+                props.myWishlist.includes(
+                  atob(props.lineItem.node.variant.product.id).replace('gid://shopify/Product/', ''),
+                ) ? (
                 <Link aria-label="Go to Wishlist" to="/wishlist" className="wishlist-button">
                   In Wishlist
                 </Link>
