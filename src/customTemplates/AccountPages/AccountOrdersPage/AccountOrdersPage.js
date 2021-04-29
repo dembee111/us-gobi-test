@@ -42,7 +42,7 @@ export default connect(mapStateToProps)((props) => {
   // let id = 'gid://shopify/Customer/3358063296570';
   if (store().getState().customer.id !== "") {
     let cid = store().getState().customer && store().getState().customer.id && store().getState().customer.id
-    var id = Base64.decode(cid);
+    var id = atob(cid);
   }
 
   useEffect(() => {
