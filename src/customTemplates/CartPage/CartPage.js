@@ -258,12 +258,12 @@ const Cart = (props) => {
               </div>
               <div className="button">
                 <button onClick={goToCheckout} className="checkout_btn"
-                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828", cursor: !props.checkout || edges.length === 0 ? "not-allowed" : "auto" }}
+                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828" }}
                   disabled={!props.checkout || edges.length === 0}>checkout</button>
               </div>
               <div className={`button mobile ${optionBtn ? 'dl-none' : ''}`}>
                 <button onClick={goToCheckout} className="checkout_btn"
-                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828", cursor: !props.checkout || edges.length === 0 ? "not-allowed" : "auto" }}
+                  style={{ backgroundColor: !props.checkout || edges.length === 0 ? "#808080" : "#282828" }}
                   disabled={!props.checkout || edges.length === 0}>checkout</button>
               </div>
             </div>
