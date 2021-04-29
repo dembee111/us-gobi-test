@@ -260,12 +260,10 @@ const Cart = (props) => {
                 <span>Secure Payment</span>
               </div>
               <div className="button">
-                <button onClick={goToCheckout} className="checkout_btn"
-                  disabled={!props.checkout || edges.length === 0}>checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
               </div>
               <div className={`button mobile ${optionBtn ? 'dl-none' : ''}`}>
-                <button onClick={goToCheckout} className="checkout_btn"
-                  disabled={!props.checkout || edges.length === 0}>checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
               </div>
             </div>
           </div>
