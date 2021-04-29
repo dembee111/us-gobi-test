@@ -39,8 +39,9 @@ export default connect(mapStateToProps)((props) => {
   ]);
   const noImg = 'https://cdn.shopify.com/s/files/1/1953/2845/files/no-image.jpg?v=1610370341';
   // let id = 'gid://shopify/Customer/3358063296570';
+
   let cid = props.customer && props.customer.id && props.customer.id
-  let id = atob(cid);
+  var id = Base64.decode(cid);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
