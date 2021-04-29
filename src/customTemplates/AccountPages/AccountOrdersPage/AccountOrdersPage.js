@@ -6,6 +6,7 @@ import useLoginHook from '../../../hooks/useLoginHook';
 import ListOrders from './ListOrders';
 import AccountOrdersPage from './AccountOrderViewPage';
 import axios from 'axios';
+import store from '../../../state/createStore';
 import moment from 'moment';
 import _ from 'lodash';
 const mapStateToProps = (state) => ({
@@ -39,9 +40,11 @@ export default connect(mapStateToProps)((props) => {
   ]);
   const noImg = 'https://cdn.shopify.com/s/files/1/1953/2845/files/no-image.jpg?v=1610370341';
   // let id = 'gid://shopify/Customer/3358063296570';
+  if (store().getState().customer.id !== "") {
+    let cid = store().getState().customer && store().getState().customer.id && store().getState().customer.id
+    var id = Base64.decode(cid);
+  }
 
-  let cid = props.customer && props.customer.id && props.customer.id
-  var id = Base64.decode(cid);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
