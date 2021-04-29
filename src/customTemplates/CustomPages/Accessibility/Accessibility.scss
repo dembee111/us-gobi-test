@@ -1,0 +1,221 @@
+.accessibility-section {
+  margin-top: 84px;
+  .section-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 75%;
+    margin: 0 auto;
+    h1 {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      color: rgba(0, 0, 0, 0.87);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    P {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, 0.56);
+      margin-bottom: 25px;
+      strong {
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    ol {
+      margin: 0 0 15px 30px;
+      padding: 0;
+      li {
+        color: rgba(0, 0, 0, 0.56);
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    ul {
+      margin: 0 0 30px 30px;
+      padding: 0;
+      li {
+        color: rgba(0, 0, 0, 0.56);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    }
+    table {
+      width: 100%;
+      border-spacing: 1px;
+      position: relative;
+      border: 0 none;
+      background: #e8e8e1;
+      td {
+        background-color: #fff;
+        border: 0 none;
+        padding: 8px;
+        p {
+          font-size: 12px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .return-policy-section {
+    .col-lg-4 {
+      padding-right: 0;
+    }
+    .side-bar {
+      overflow: hidden;
+      overflow-x: scroll;
+      margin-bottom: 30px;
+
+      ul {
+        display: flex;
+        border-bottom: 1px solid #dbdbdb;
+        width: 500px;
+        li {
+          a {
+            font-size: 12px;
+            padding: 0px 9px;
+            display: block;
+            line-height: 14px;
+          }
+        }
+        .active {
+          border-bottom: 3px solid #000;
+          text-decoration: none;
+        }
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .section-head {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      h1 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 0.025em;
+        display: block !important;
+      }
+    }
+    .section-body {
+      h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: none;
+      }
+      p {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+        strong {
+          font-size: 16px;
+        }
+      }
+      ul {
+        margin: 0 0 15px 15px;
+        li {
+          font-size: 13px;
+        }
+      }
+      ol {
+        li {
+          font-size: 13px;
+        }
+      }
+      table {
+        td {
+          padding: 5px;
+        }
+        p {
+          font-size: 10px;
+          strong {
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .return-policy-section {
+    line-height: 1.6;
+    .side-bar {
+      overflow: hidden;
+      overflow-x: scroll;
+      margin-bottom: 30px;
+      ul {
+        display: flex;
+        border-bottom: 1px solid #dbdbdb;
+
+        li {
+          a {
+            font-size: 12px;
+            padding: 0px 10px;
+          }
+        }
+      }
+      .active {
+        margin-top: -2px;
+        border-bottom: 3px solid #000;
+        text-decoration: none !important;
+      }
+    }
+    .section-head {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      h1 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 0.025em;
+        display: block !important;
+      }
+    }
+    .section-body {
+      h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: none;
+      }
+      p {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+        strong {
+          font-size: 16px;
+        }
+      }
+      ul {
+        margin: 0 0 15px 15px;
+        li {
+          font-size: 13px;
+        }
+      }
+      table {
+        td {
+          padding: 5px;
+        }
+        p {
+          font-size: 10px;
+          strong {
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+}

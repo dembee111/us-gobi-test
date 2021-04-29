@@ -1,0 +1,60 @@
+//Collection Main CSS
+.hiddenRefinement {
+  display: none;
+}
+.mainContent {
+  position: relative;
+  width: 100%;
+  padding: 0 135px;
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 0 56px;
+  }
+  @media only screen and (min-width: 993px) and (max-width: 1200px) {
+    padding: 0 26px;
+  }
+  .breadCrumbMain {
+    position: relative;
+    display: flex;
+    margin-left: 0px;
+    padding: 24px 0 0px;
+    .breadCrumbSingleMain {
+      display: flex;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      color: #4f5255;
+      a {
+        color: #4f5255;
+      }
+      .breadCrumbSingleMainMark {
+        width: 7px;
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+    }
+    .breadCrumbSingleStat {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 24px;
+      display: flex;
+      color: rgba(79, 82, 85, 0.54);
+      margin-left: 8px;
+    }
+  }
+  .collectionPageMain {
+    .productGrid {
+    }
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  .mainContent {
+    padding: 0 4px;
+    .breadCrumbMain {
+      margin: 0;
+      padding: 24px 18px 6px;
+    }
+  }
+}

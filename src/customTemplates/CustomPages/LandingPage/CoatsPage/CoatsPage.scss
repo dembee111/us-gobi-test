@@ -1,0 +1,651 @@
+.coats-landing-page {
+  .coats-page {
+    margin-top: -8px;
+    overflow: hidden;
+    //Hover
+    .single-img,
+    .double-img {
+      overflow: hidden;
+      position: relative;
+      .btn-hover {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        opacity: 0;
+        transform: translate(100%, 100%);
+
+        a {
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 19px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #ffffff;
+          z-index: 1;
+        }
+      }
+      .btn-bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.28);
+        border-radius: 100%;
+        width: 286px;
+        height: 286px;
+        transform: translate(100%, 100%);
+        transition: 0.7s ease all;
+      }
+
+      &:hover {
+        .btn-hover {
+          transition: 0.7s ease all;
+          transform: translate(-30%, -180%);
+          opacity: 1;
+        }
+        .btn-bg {
+          transform: translate(50%, 50%);
+          transition: 0.7s ease all;
+        }
+        .img-box {
+          img {
+            -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+
+    //Images hover
+    //###################################
+    .img-box {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      a {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: scale(1);
+          transition: 0.3s ease-in;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    //Tabs ################################
+    .winter-tabs {
+      .react-tabs__tab-list {
+        background-color: #69726e;
+        margin: 0;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: unset;
+      }
+      .react-tabs__tab {
+        color: #ffffff;
+        font-size: 32px;
+        line-height: 64px;
+        text-align: center;
+        letter-spacing: 0.12em;
+        padding: 0;
+        margin: 0 36px;
+      }
+      .react-tabs__tab--selected {
+        position: relative;
+        background: unset;
+        border-color: unset;
+        border: unset;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background: #ffffff;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .react-tabs__tab:focus {
+        box-shadow: unset;
+        border-color: unset;
+      }
+      .react-tabs {
+        &:focus {
+          outline: unset !important;
+        }
+      }
+    }
+    .title-pos {
+      position: absolute;
+      left: 25%;
+      transform: translateX(-50%);
+      top: -80px;
+      h1 {
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 81px;
+        margin-bottom: 0;
+        letter-spacing: 0.12em;
+
+        color: #171717;
+      }
+    }
+
+    a {
+      display: block;
+      cursor: pointer;
+    }
+    //Description txt
+    .white {
+      color: #ffffff;
+      padding-right: 30%;
+      padding: 60px 0 157px;
+      max-width: 433px;
+    }
+    .black {
+      color: #292929;
+      padding-right: 70px;
+      padding: 33px 0 80px;
+      max-width: 433px;
+      margin: 0 0 0 auto;
+    }
+    .description {
+      p {
+        font-style: normal;
+        font-weight: normal;
+        text-align: left;
+        font-size: 22px;
+        line-height: 35px;
+      }
+    }
+
+    //bg background
+
+    .w-header {
+      position: relative;
+      width: 100%;
+      height: 120vh;
+      background: #69726e;
+      overflow: hidden;
+      .bg {
+        position: relative;
+        width: 100%;
+        height: 87vh;
+        img {
+          width: 100%;
+          height: 90vh;
+          object-fit: cover;
+        }
+        .title {
+          position: absolute;
+          width: 60%;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          z-index: 2;
+          h1 {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 102px;
+            line-height: 108px;
+            text-align: center;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .caption {
+        position: absolute;
+        top: 140px;
+        left: 50%;
+        transform: translateX(-50%);
+        .img-box {
+          position: relative;
+          z-index: 1;
+          max-width: 600px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    //Section1
+    .w1-section {
+      position: relative;
+      width: 100%;
+      padding-top: 100px;
+      .grid-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 120px;
+        .l-sec {
+          position: relative;
+          .single-img {
+            position: relative;
+            overflow: hidden;
+            .img-box {
+              overflow: hidden;
+              width: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.3s ease-in;
+              }
+            }
+          }
+        }
+        .r-sec {
+          position: relative;
+          padding-right: 60px;
+          .grid-img {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+            .double-img {
+              position: relative;
+              overflow: hidden;
+              .img-box {
+                width: 100%;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        background: #69726e;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 73%;
+      }
+    }
+
+    //section 21
+    .w21-section {
+      position: relative;
+      width: 100%;
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+        padding: 0;
+        max-width: 33%;
+        margin: 0 auto;
+        .img-box {
+          position: relative;
+          z-index: 1;
+          img {
+            width: 100%;
+            height: unset;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    //Section3
+    .w3-section {
+      position: relative;
+      background: #69726e;
+      padding-top: 344px;
+      padding-left: 70px;
+      padding-right: 70px;
+      padding-bottom: 135px;
+      margin-top: -215px;
+      .grid-1 {
+        display: grid;
+        grid-template-columns: 37% 1fr;
+        grid-gap: 15%;
+        .img-box {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .sub-title {
+        position: absolute;
+        left: 70px;
+        bottom: 20%;
+        padding: 0 30px;
+        h1 {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 56px;
+          line-height: 81px;
+          letter-spacing: 0.12em;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .winter-collection {
+      background-color: #69726e;
+      padding: 0 70px;
+      .col-lg-3 {
+        padding: 0 10px !important;
+      }
+      .col-4 {
+        padding: 0 10px !important;
+      }
+      img {
+        border-radius: 0px !important;
+      }
+      .productImage {
+        border-radius: 0px !important;
+      }
+      .productDetailBox {
+        margin-bottom: 50px !important;
+      }
+      .productColorBox {
+        display: none !important;
+      }
+      .hoverProductDetailColorBox {
+        display: none !important;
+      }
+      .productPriceBoxInner {
+        div {
+          color: #ffffff !important;
+        }
+      }
+      .productTitle {
+        p {
+          color: #ffffff !important;
+        }
+      }
+      .new-sidebox-right {
+        transition: unset !important;
+      }
+    }
+  }
+
+  //Mobile
+
+  @media only screen and (max-width: 767px) and (min-width: 300px) {
+    .coats-page .coming-soon h1 {
+      font-size: 10px;
+      line-height: 12px;
+      padding: 6px 6px;
+    }
+    .coats-page {
+      .pad-left-100 {
+        padding-left: 100px;
+      }
+      .pad-right-100 {
+        padding-right: 100px;
+      }
+    }
+    .coats-page .w3-section .sub-title {
+      left: 20px;
+      right: 25%;
+    }
+    .coats-page .winter-tabs {
+      padding-top: 0px;
+      padding-bottom: 0;
+    }
+    .coats-page .w-header {
+      height: 70vh;
+    }
+    .coats-page .w-header .bg {
+      height: 60vh;
+      img {
+        height: 50vh;
+      }
+    }
+    .coats-page .w-header .caption {
+      width: 100%;
+      padding: 0 20px;
+      top: 100px;
+    }
+    .coats-page .w-header .caption .img-box {
+      max-width: 100%;
+    }
+    .coats-page .w-header .bg .title h1 {
+      font-size: 44px;
+      line-height: 50px;
+    }
+    .coats-page .w-header .bg .title {
+      width: 100%;
+      bottom: -50px;
+    }
+    .coats-page .w1-section::before {
+      height: 80%;
+    }
+    .coats-page .w1-section {
+      padding: 70px 20px 20px;
+    }
+    .coats-page .w1-section .grid-main {
+      grid-template-rows: unset;
+      grid-row-gap: 20px;
+      grid-template-columns: unset;
+    }
+    .coats-page .position-abs {
+      position: relative;
+      bottom: 0;
+    }
+    .coats-page .description p {
+      font-size: 14px;
+      line-height: 22px;
+      padding: 20px 20px;
+    }
+    .coats-page .w1-section .grid-main .r-sec {
+      grid-template-rows: 1fr auto 1fr;
+      padding-right: 0;
+    }
+    .coats-page .w1-section .grid-main .r-sec .grid-img {
+      grid-gap: 10px;
+    }
+    .coats-page .white {
+      padding-right: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+    .coats-page .black {
+      padding: 0;
+    }
+
+    //Grid 3
+    .coats-page .w21-section {
+      padding: 0 60px 60px;
+    }
+    .coats-page .w21-section .grid-3 {
+      padding: 0;
+      grid-template-columns: 1fr;
+      grid-gap: 0px;
+      max-width: 100%;
+    }
+
+    .coats-page .w3-section {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 60px;
+      padding-top: 60px;
+      margin-top: 0;
+    }
+    .coats-page .w3-section .sub-title h1 {
+      font-size: 16px;
+      line-height: 23px;
+    }
+    .coats-page .w3-section .grid-1 {
+      grid-template-rows: auto;
+      grid-template-columns: unset;
+      grid-gap: 20px;
+    }
+    .coats-page .w3-section .grid-1 .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .coats-page .img-bg1 {
+      padding: 113px 62px;
+    }
+    .coats-page .title-pos {
+      position: relative;
+      padding-bottom: 0px;
+      left: 50%;
+      top: -90px;
+      h1 {
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 0;
+        color: #171717;
+        text-align: center;
+      }
+    }
+
+    .coats-page .position-abs2 {
+      position: relative;
+      bottom: 0;
+    }
+
+    .coats-page .pad-0 {
+      padding: 0 !important;
+    }
+    .coats-page .w21-section .grid-3 .m-grid {
+      grid-row-end: span 2;
+    }
+
+    .coats-page .winter-tabs .react-tabs__tab-list {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .coats-page .winter-tabs .react-tabs__tab {
+      font-size: 16px;
+      line-height: 32px;
+    }
+
+    .coats-page .w2-section .grid-2 .r-sec .grid-img .description {
+      padding-top: 0;
+    }
+    .coats-page .winter-collection {
+      padding: 0 20px;
+    }
+    .coats-page .winter-collection {
+      .col-6 {
+        padding: 0 5px;
+      }
+    }
+    .coats-page .winter-collection {
+      .row {
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+    }
+    .coats-page .img-box-bottom {
+      align-items: flex-start;
+    }
+    .pad-right-100 {
+      padding-right: 100px;
+    }
+    .pad-left-100 {
+      padding-left: 100px;
+    }
+  }
+  @media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .coats-page .m-top {
+      margin-top: -100px;
+      padding-bottom: 100px;
+    }
+    .coats-page .w3-section {
+      margin-top: 0px;
+      padding-top: 200px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .coats-page .black {
+      padding: 33px 0 33px;
+    }
+    .coats-page .white {
+      padding: 30px 0 30px;
+    }
+    .coats-page .w1-section .grid-main {
+      grid-gap: 60px;
+    }
+    .coats-page .w1-section .grid-main .r-sec {
+      padding-right: 30px;
+    }
+    .coats-page .position-abs {
+      right: 30px;
+    }
+    .coats-page .w2-section .grid-2 {
+      grid-template-columns: 2fr 1fr;
+    }
+    .coats-page .w2-section .grid-2 .r-sec .grid-img .description {
+      padding-top: 80px;
+    }
+    .coats-page .w21-section .grid-3 {
+      padding: 0 70px 70px;
+      max-width: 100%;
+    }
+
+    .coats-page .coming-soon h1 {
+      font-size: 14px;
+      line-height: 16px;
+      padding: 6px 6px;
+      text-align: center;
+    }
+    .coats-page .w-header .caption .title h1 {
+      font-size: 96px;
+      line-height: 102px;
+      padding: 0 20px;
+    }
+    .coats-page .w-header {
+      height: 110vh;
+    }
+    .coats-page .w-header .bg .title h1 {
+      font-size: 96px;
+      line-height: 96px;
+    }
+    .coats-page .w-header .bg .title {
+      width: 100%;
+    }
+    .coats-page .w-header .caption .img-box {
+      max-width: 100%;
+    }
+    .coats-page .w-header .caption {
+      width: 100%;
+      padding: 0 70px;
+    }
+
+    .coats-page .white {
+      padding-right: 0px;
+    }
+    .coats-page .description p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .coats-page .w3-section .sub-title h1 {
+      font-size: 36px;
+      line-height: 56px;
+    }
+    .coats-page .w3-section .sub-title {
+      left: 70px;
+    }
+    .coats-page .title-pos {
+      width: 100%;
+      transform: unset;
+      left: 70px;
+      top: -50px;
+    }
+
+    .coats-page .title-pos h1 {
+      font-size: 36px;
+      line-height: 48px;
+    }
+  }
+}

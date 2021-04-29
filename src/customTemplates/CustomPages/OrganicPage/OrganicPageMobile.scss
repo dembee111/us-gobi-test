@@ -1,0 +1,191 @@
+@media only screen and (max-width: 767px) and (min-width: 300px) {
+  .organic-page-main .organic-header {
+    overflow: hidden;
+    padding-bottom: 100px;
+  }
+  .organic-page-main .organic-header .bg-layout h1 {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .organic-page-main .organic-header .bg-layout .h-r-text {
+    padding: 0;
+  }
+  .organic-page-main .organic-header .bg-layout h2 {
+    display: block;
+    line-height: 48px;
+  }
+  .organic-page-main .organic-header .bg-layout p {
+    display: none;
+  }
+  .organic-page-main .organic-header .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .organic-page-main .organic-header .desktop-m {
+    display: none;
+  }
+
+  .organic-page-main .organic-header .bg-layout a {
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .organic-page-main .organic-header .bg-layout {
+    padding: 0 20px;
+    top: 47%;
+    z-index: 1;
+  }
+  .organic-page-main .organic-header .img-bg {
+    height: 60vh;
+  }
+  .organic-page-main .section-1 .col-6,
+  .col-12 {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 14px;
+  }
+  .organic-page-main .section-1 .row {
+    margin-left: -7px;
+    margin-right: -7px;
+  }
+  .organic-page-main .section-banner {
+    margin: 14px 0;
+    height: 100%;
+  }
+  .organic-page-main .section-banner .banner-box {
+    height: 100%;
+  }
+  .organic-page-main .section-banner .text-caption {
+    height: 100%;
+    top: 50%;
+    bottom: 0;
+  }
+  .organic-page-main .section-banner .text-caption p {
+    font-size: 8px;
+    line-height: 13px;
+  }
+  .organic-page-main .section-1 {
+    margin: 15px 0;
+  }
+
+  .mobile-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    .sec1 {
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 60vh;
+      }
+    }
+  }
+  .mobile-2 {
+    position: absolute;
+    top: 144px;
+    right: 15px;
+    width: 240px;
+    .sec1 {
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .organic-page-main .mobile-1,
+  .organic-page-main .mobile-2 {
+    display: block;
+  }
+
+  .organic-page-main .section-3 .container-fluid {
+    padding: 0 15px !important;
+  }
+  .organic-page-main .section-3 .box-width {
+    padding: 30px 0;
+  }
+  .organic-page-main .section-3 .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px 0px;
+  }
+  .organic-page-main .section-3 .box-layout .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 7px;
+  }
+  .organic-page-main .section-3 .row {
+  }
+  .organic-page-main .section-3 {
+    margin: 15px 0;
+  }
+  .organic-page-main .section-3 .l-box img,
+  .organic-page-main .section-3 .r-box img {
+    padding: 0 7px;
+  }
+  .organic-page-main .section-3 .box-width .box-layout {
+    margin: 0 7px;
+  }
+  .organic-page-main .section-1 .bgg .btn-bg {
+    display: block;
+  }
+  .organic-page-main .col-12 {
+    padding-bottom: 14px;
+  }
+  .organic-page-main .section-video {
+    height: 100%;
+  }
+  .organic-page-main .section-video .desk-video-section {
+    display: none;
+  }
+  .organic-page-main .section-video .mobile-video-section {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .organic-page-main .organic-header .img-bg {
+    height: 81vh;
+  }
+  .organic-page-main .organic-header .bg-layout .h-r-text {
+    padding: 0;
+  }
+  .organic-page-main .section-banner {
+    height: 100%;
+  }
+  .organic-page-main .section-banner .banner-box {
+    height: 100%;
+  }
+  .organic-page-main .section-3 .container-fluid {
+    padding: 0 !important;
+  }
+  .organic-page-main .organic-header .bg-layout {
+    top: 42%;
+    transform: translatey(-42%);
+  }
+  .organic-page-main .section-3 .box-width {
+    padding: 30px 15px;
+  }
+  .organic-page-main .section-3 {
+    margin: 0;
+  }
+  .organic-page-main .section-3 .box-layout .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .organic-page-main .section-3 .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .organic-page-main .section-video {
+    height: 100%;
+    margin-bottom: 0 !important;
+  }
+  .organic-page-main .section-1 {
+    margin: 30px 0;
+  }
+}

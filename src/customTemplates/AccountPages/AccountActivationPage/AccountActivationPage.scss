@@ -1,0 +1,72 @@
+.passWordTokenRecoverMainPage {
+  width: 450px;
+  height: 300px;
+
+  margin: auto;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  text-align: center;
+
+  .upperDiv {
+    margin-bottom: 50px;
+  }
+  button {
+    width: 100%;
+    padding: 11px 20px;
+    transition: none;
+    padding: 13px 20px;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 0;
+    // width: auto;
+    min-width: 90px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    color: #fff;
+    background: #111;
+    // font-family: 'Futura', sans-serif;
+    letter-spacing: 0.025em;
+    line-height: 1.6;
+    // -webkit-font-smoothing: antialiased;
+    // -webkit-text-size-adjust: 100%;
+    // text-rendering: optimizeSpeed;
+  }
+  h1 {
+    // font-family: 'Futura', sans-serif;
+    font-size: 1.875em;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  input {
+    // background-repeat: no-repeat;
+    // background-attachment: scroll;
+    // background-size: 16px 18px;
+    // background-position: 98% 50%;
+    // cursor: auto;
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    border: 1px solid #e8e8e1;
+    max-width: 100%;
+    padding: 8px 10px;
+    border-radius: 0;
+  }
+}

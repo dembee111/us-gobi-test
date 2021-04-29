@@ -1,0 +1,220 @@
+.valentine-banner {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  background: linear-gradient(0deg, #ededed, #ededed);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 18px;
+  .detail {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border-radius: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 22px 36px;
+    background-color: #fff;
+    .left {
+      width: 368px;
+      margin-right: 48px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        right: 2.5vw;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 13.75vw;
+        width: 1px;
+        background-color: #c4c4c4;
+        display: none;
+      }
+      .tt {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: #282828;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 18px;
+        color: #282828;
+      }
+    }
+    .right {
+      width: calc(100% - 416px);
+      display: flex;
+      align-self: center;
+      .text {
+        position: relative;
+        text-align: right;
+        width: 140px;
+        margin-right: 73px;
+        text-transform: uppercase;
+        &:last-child {
+          margin-right: 0;
+          &::after {
+            display: none;
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          right: -36px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 48px;
+          width: 1px;
+          background: rgba(0, 0, 0, 0.12);
+        }
+        p {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+          color: #282828;
+        }
+        span {
+          display: block;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+          color: #ad0020;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 2560px) {
+  .valentine-banner .detail {
+    padding: 1.528vw 1.5vw;
+  }
+  .valentine-banner .detail .left {
+    width: 25.556vw;
+    margin-right: 3.333vw;
+  }
+  .valentine-banner .detail .left .tt {
+    font-size: 1.667vw;
+    line-height: 2.222vw;
+  }
+  .valentine-banner .detail .left .text {
+    font-size: 0.972vw;
+    line-height: 1.25vw;
+  }
+  .valentine-banner .detail .right {
+    width: calc(100% - 28.889vw);
+  }
+  .valentine-banner .detail .right .text {
+    width: 9.722vw;
+    margin-right: 5.069vw;
+  }
+  .valentine-banner .detail .right .text p {
+    font-size: 1.25vw;
+    line-height: 1.667vw;
+  }
+  .valentine-banner .detail .right .text span {
+    font-size: 1.25vw;
+    line-height: 1.667vw;
+  }
+  .valentine-banner .detail .right .text::after {
+    right: -2.5vw;
+    height: 3.333vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .valentine-banner .detail {
+    padding: 22px 36px;
+  }
+  .valentine-banner .detail .left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+  .valentine-banner .detail .left .tt {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .valentine-banner .detail .left .text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .valentine-banner .detail .right {
+    width: 100%;
+    justify-content: center;
+  }
+  .valentine-banner .detail .right .text {
+    width: 140px;
+    margin-right: 73px;
+  }
+  .valentine-banner .detail .right .text p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .valentine-banner .detail .right .text span {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .valentine-banner .detail .right .text::after {
+    right: -36px;
+    height: 48px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .valentine-banner .detail {
+    padding: 24px 18px;
+  }
+  .valentine-banner .detail .left {
+    width: 100%;
+    margin-right: 0;
+  }
+  .valentine-banner .detail .left .tt {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0;
+  }
+  .valentine-banner .detail .left .text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .valentine-banner .detail .right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .valentine-banner .detail .right .text {
+    width: 100%;
+    margin-right: 0;
+    text-align: normal;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  .valentine-banner .detail .right .text p {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #282828;
+  }
+  .valentine-banner .detail .right .text span {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ad0020;
+  }
+  .valentine-banner .detail .right .text::after {
+    display: none;
+  }
+}

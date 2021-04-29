@@ -1,0 +1,174 @@
+.locationPopUpMain {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(1, 1, 1, 0.5);
+  z-index: 501;
+  .centerMainDiv {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 530px;
+    height: 330px;
+    background-color: white;
+    .upperTitleDiv {
+      width: 100%;
+      height: 69px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ebebeb;
+      p {
+        position: absolute;
+        margin-top: 26px;
+        margin-left: 57px;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+
+        color: #000000;
+      }
+      svg {
+        position: absolute;
+        top: 20px;
+        right: 26px;
+      }
+    }
+    .lowerBodyDiv {
+      width: 100%;
+      position: absolute;
+      // height: inherit;
+      bottom: 0;
+      top: 69px;
+      padding: 35px 57px 0px 57px;
+      .lowerBodyLabel {
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.055em;
+
+        color: #000000;
+      }
+      .countrySelect {
+        .countrySelectSelectDiv {
+          margin-top: 19px;
+        }
+        position: relative;
+        .selectIcon {
+          // color: #dbdbdb;
+          height: 2.5em;
+          pointer-events: none;
+          position: absolute;
+          top: 8px;
+          left: 10px;
+          width: 2.5em;
+          z-index: 4;
+        }
+        .countrySelectAfterDiv {
+          width: 20px;
+          height: 20px;
+          pointer-events: none;
+          background-color: white;
+          position: absolute;
+          top: 6px;
+          right: 4px;
+          z-index: 4;
+        }
+      }
+      select {
+        width: 100%;
+        height: 36px;
+        background: #ffffff;
+        border: 1px solid #999999;
+        border-radius: 0px;
+        box-sizing: border-box;
+        padding-left: 35px;
+        -webkit-appearance: none;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          border: 1px solid black;
+        }
+      }
+      button {
+        width: 50%;
+        height: 30px;
+      }
+      .confirmButton {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        background: #000;
+        border: 1px solid #000;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        /* identical to box height */
+
+        // text-align: center;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+      }
+      .cancelButton {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        background: #fff;
+        border: none;
+        color: black;
+        cursor: pointer;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        /* identical to box height */
+
+        // text-align: center;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  .locationPopUpMain {
+    .centerMainDiv {
+      width: 90%;
+      .upperTitleDiv {
+        height: 48px;
+        P {
+          margin-top: 15px;
+          margin-left: 20px;
+          font-size: 14px;
+        }
+        svg {
+          width: 20px;
+          top: 6px;
+          right: 20px;
+        }
+      }
+      .lowerBodyDiv {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

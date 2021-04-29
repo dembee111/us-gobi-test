@@ -1,0 +1,27 @@
+.sizeMain {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  // height: 300px;
+  .singleSizeMain {
+    display: flex;
+    cursor: pointer;
+    width: 60px;
+    height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    p {
+      line-height: 16px;
+      font-size: 12px;
+      width: fit-content;
+      margin: auto;
+    }
+    &:hover {
+      border: 1px solid #4f5255;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+.modal-notify-when-available {
+  position: fixed; /* Stay in place */
+  z-index: 801; /* Sit on top */
+  //padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  #notify-when-available-background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(255, 255, 255); /* Fallback color */
+    background-color: rgba(255, 255, 255, 0.65); /* white w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content-notify-when-available {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fefefe;
+    margin: auto;
+    padding: 24px;
+    width: 100%;
+    box-shadow: 5px 20px 40px rgba(0, 0, 0, 0.1), 5px 10px 10px rgba(0, 0, 0, 0.2);
+    max-width: 460px;
+    left: 0;
+    right: 0;
+  }
+  .loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #000;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  .modal-header-notify-when-available {
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .modal-body-notify-when-available {
+    max-height: 800px;
+    overflow-y: auto;
+    z-index: 3;
+    margin: 24px;
+    text-align: center;
+  }
+
+  /* The Close Button */
+  .close-notify-when-available {
+    color: black;
+    float: right;
+    // background: url("../../../../../assets/close-icon.svg") no-repeat;
+    width: 16px;
+    height: 16px;
+  }
+
+  .close-notify-when-available:hover,
+  .close-notify-when-available:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .notifyMeButton {
+    width: 100%;
+    height: 45px;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+    text-align: -webkit-center;
+  }
+
+  .rounded-edges {
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 24px;
+  }
+
+  .email-input {
+    margin-top: 18px;
+    padding: 9px 12px;
+    border-style: none;
+    border: 1px solid #e3e3e3;
+  }
+
+  .email-input:focus {
+    border: black 1px solid;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .modal-body-notify-when-available .variant-input {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    border: #e3e3e3 1px solid;
+    border-radius: 4px;
+    padding: 9px 12px;
+    text-align: left;
+    position: relative;
+    background-color: white;
+  }
+
+  .modal-body-notify-when-available .variant-input:focus {
+    //   border: black 2px solid;
+    //   border-radius: 4px;
+    outline: none;
+  }
+
+  .options {
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+    background: white;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+    width: 364px;
+    display: none;
+    z-index: 1;
+  }
+  .option {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+  .option:hover {
+    background-color: #f2f2f2;
+  }
+
+  .modal-body-notify-when-available .variant-input svg {
+    right: 4%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+  }
+
+  .response-message {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+}

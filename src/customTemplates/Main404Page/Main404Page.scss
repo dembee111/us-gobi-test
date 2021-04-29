@@ -1,0 +1,63 @@
+.main-404page-section {
+  .container {
+    .row {
+      .header-404 {
+        margin: 0 auto;
+        padding: 80px 0;
+        h1 {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 36px;
+          text-align: center;
+          letter-spacing: 0.55px;
+          text-transform: uppercase;
+          color: #000000;
+        }
+        p {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.87);
+        }
+
+        .button-section {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          margin-top: 36px;
+          .button {
+            background-color: #2e3032;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 18px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fbf8f5;
+            padding: 11px 36px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .p-title-a {
+      text-align: center;
+      h3 {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.52px;
+        text-transform: uppercase;
+        color: #000000;
+        display: none;
+      }
+    }
+  }
+}

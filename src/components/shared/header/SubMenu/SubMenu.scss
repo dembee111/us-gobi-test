@@ -1,0 +1,83 @@
+.sub-menu {
+  position: absolute;
+  overflow-y: auto;
+  display: block;
+  top: 52px;
+  bottom: 0;
+  background: #f5f7f6;
+  width: 100%;
+  right: 0;
+  height: -webkit-calc(100% - 52px);
+  height: calc(100% - 52px);
+  z-index: 400;
+  transform: translateX(100%);
+  transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .sub-list {
+    .sub-list-back {
+      padding: 16px 18px;
+      border-bottom: 1px solid #ecece6;
+      .backBtn {
+        display: flex;
+        &:hover {
+          cursor: pointer;
+        }
+        svg {
+          margin: auto 4px auto 0;
+        }
+        span {
+          margin: auto 0 auto 4px;
+          font-size: 12px;
+          line-height: 16px;
+          color: #4f5255;
+        }
+      }
+    }
+
+    ul {
+      li {
+        padding: 16px 18px;
+        border-bottom: 1px solid #ecece6;
+        display: flex;
+        &.sub_tt {
+          span {
+            font-size: 12px;
+            line-height: 16px;
+            display: block;
+            color: #4f5255;
+            font-weight: bold;
+          }
+          &.mt {
+            margin-top: 0;
+          }
+        }
+        a {
+          display: block;
+          width: 100%;
+          font-size: 12px;
+          line-height: 16px;
+          color: #4f5255;
+        }
+        .Collapsible {
+          border-bottom: 0;
+          padding: 0;
+          margin: auto 0;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          .Collapsible__trigger {
+            width: 100%;
+            font-size: 12px;
+            line-height: 16px;
+            color: #4f5255;
+          }
+          .Collapsible__contentOuter {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &.open {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,130 @@
+.gr_list {
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 8px;
+  &.gift_color {
+    margin-bottom: 12px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .tt,
+  .color_tt {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .tt {
+    color: #4f5255;
+    margin-right: 4px;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .color_tt {
+    color: #212121;
+    text-transform: capitalize;
+    display: block;
+    font-weight: bold;
+  }
+  .change-link {
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: underline;
+    color: #212121;
+    cursor: pointer;
+  }
+  .tc_color {
+    margin-left: 0px;
+  }
+  .tc_change {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 8px;
+    &.open {
+      flex-wrap: wrap;
+      .color_tt {
+        display: none;
+      }
+      .dropdown {
+        position: relative;
+        left: 0;
+        right: auto;
+        top: 0;
+        background: #f5f7f6;
+        border-radius: 4px;
+        padding: 8px;
+        z-index: 2;
+        margin-bottom: 8px;
+        .colors-title {
+          margin-bottom: 8px;
+          .choose-txt {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: #212121;
+          }
+        }
+        .option {
+          display: flex;
+          margin-bottom: 8px;
+          .color-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 500px;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            margin-right: 8px;
+            border: 1px solid transparent;
+            transition: 0.3s ease-in;
+            .color_back {
+              margin: auto;
+              width: 20px;
+              height: 20px;
+              border-radius: 500px;
+              overflow: hidden;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          }
+          .color_option {
+            font-weight: normal;
+            color: #212121;
+            font-size: 12px;
+            line-height: 16px;
+            margin: auto 0;
+          }
+          .color_tt {
+            font-size: 12px;
+            line-height: 16px;
+            color: #212121;
+            display: block;
+            margin: auto 0;
+          }
+          &.active {
+            .color-circle {
+              border: 1px solid #3070c3;
+            }
+            .color_tt {
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            .color-circle {
+              border: 1px solid #d6d6d6;
+            }
+            .color_tt {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .change-link {
+      margin-left: 8px;
+    }
+  }
+}

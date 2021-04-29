@@ -1,0 +1,59 @@
+.header-banner {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  .detail {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border-radius: 0;
+    display: flex;
+    padding: 4px 8px;
+    background: #ecd1d7;
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      p {
+        width: 840px;
+      }
+    }
+    p {
+      width: 840px;
+      font-size: 12px;
+      line-height: 16px;
+      color: #282828;
+      a {
+        color: #282828;
+      }
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header-banner .detail .bottom_text {
+    margin: auto auto;
+  }
+  .header-banner .detail p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .header-banner .detail.desktop p {
+    width: 840px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-banner .detail.desktop {
+    display: none;
+  }
+  .header-banner .detail.mobile {
+    display: flex;
+  }
+  .header-banner .detail p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

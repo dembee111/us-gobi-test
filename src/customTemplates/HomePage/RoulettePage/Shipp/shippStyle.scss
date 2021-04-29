@@ -1,0 +1,79 @@
+.shipp-container {
+  background: #f5f7f6;
+  width: 100%;
+  height: 489px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    width: 552px;
+    height: 489px;
+  }
+  .shipp-title {
+    margin-top: 48px;
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #212121;
+    margin-bottom: 18px;
+    span {
+      display: block;
+      font-size: 36px;
+      line-height: 47px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #212121;
+    }
+    .shipp-box-title {
+      margin-bottom: 18px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      text-transform: capitalize !important;
+      color: #212121;
+    }
+  }
+  .shipp-btn {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #212121;
+    margin-top: 18px;
+  }
+}
+.shippSlider-container {
+  background: #f5f7f6;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    width: 552px;
+    height: 796px;
+  }
+
+  .shipp-title {
+    margin-top: 48px;
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #212121;
+    margin-bottom: 4px;
+    span {
+      display: block;
+      font-size: 36px;
+      line-height: 47px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #212121;
+      margin-bottom: 24px;
+    }
+  }
+}

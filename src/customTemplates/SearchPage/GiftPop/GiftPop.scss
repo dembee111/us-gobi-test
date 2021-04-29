@@ -1,0 +1,168 @@
+.gift-pop-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.54);
+  z-index: 999;
+}
+.gift-pop-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 48px 96px;
+  display: grid;
+  grid-row-gap: 36px;
+  grid-template-rows: auto;
+  z-index: 999;
+  .gift-pop-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    h1 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #4f5255;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 24px;
+      line-height: 32px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #4f5255;
+      padding-left: 9px;
+    }
+  }
+  .gift-pop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 18px;
+    .gift-pop-grid-item {
+      .gift-pop-name {
+        p {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 21px;
+          margin-bottom: 2px;
+          color: #4f5255;
+        }
+      }
+      .gift-pop-price {
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 24px;
+          color: #ad0020;
+          margin-bottom: 0;
+        }
+      }
+      .gift-pop-product {
+        h1 {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 21px;
+          color: #4f5255;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .gift-pop-btn {
+    margin: 0 auto;
+    width: max-content;
+    a {
+      cursor: pointer;
+      display: block;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 16px 90px;
+      color: #212121;
+      background: #ffffff;
+      border: 1px solid #212121;
+      box-sizing: border-box;
+      border-radius: 24px;
+      &:hover {
+        border: 1px solid #4f5255;
+        color: #4f5255;
+      }
+    }
+  }
+  .close_btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .gift-pop-section {
+    width: 94%;
+    padding: 36px 24px;
+  }
+  .gift-pop-section .gift-pop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gift-pop-section .gift-pop-title h1 {
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 8px;
+  }
+  .gift-pop-section .gift-pop-title span {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .gift-pop-section .gift-pop-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gift-pop-section .gift-pop-grid .gift-pop-grid-item .gift-pop-name p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .gift-pop-section .gift-pop-grid .gift-pop-grid-item .gift-pop-price p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .gift-pop-section .gift-pop-grid .gift-pop-grid-item .gift-pop-product h1 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .gift-pop-section .close_btn {
+    top: 8px;
+    right: 8px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .gift-pop-section {
+    width: 80%;
+    padding-top: 40px;
+  }
+  .gift-pop-section .gift-pop-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .gift-pop-section .gift-pop-title h1 {
+    margin-bottom: 8px;
+  }
+}

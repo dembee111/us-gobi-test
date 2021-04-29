@@ -1,0 +1,379 @@
+.tc_signModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 201;
+  &.open_modal {
+    display: flex;
+  }
+  .tc_modalBody {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 440px;
+    padding: 18px;
+    background-color: #fff;
+    .close_btn {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        margin: auto;
+      }
+    }
+    .tc_logo {
+      margin: 18px 0 36px;
+      display: flex;
+      a {
+        margin: 0 auto;
+        .custom_logo {
+          display: flex;
+          svg {
+            width: 62px;
+            height: 18px;
+          }
+        }
+      }
+    }
+    .detail {
+      &.sign_in {
+        display: none;
+        &.hide_login {
+          display: none;
+        }
+        &.hide_register {
+          display: block;
+        }
+        .tc_form-group {
+          .group {
+            &:nth-child(2) {
+              margin-bottom: 18px;
+            }
+          }
+        }
+      }
+      &.sign_up {
+        display: none;
+        &.hide_login {
+          display: none;
+        }
+        &.hide_register {
+          display: block;
+        }
+        .tc_form-group {
+          .group {
+            &:nth-child(4) {
+              margin-bottom: 18px;
+            }
+          }
+          .txt {
+            p {
+              max-width: 270px;
+            }
+          }
+        }
+      }
+      padding: 0 30px;
+      .tt {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        color: #4f5255;
+        margin-bottom: 36px;
+      }
+      .tc_form-group {
+        .group {
+          margin-bottom: 12px;
+          label {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            display: none;
+          }
+          input {
+            border: 0;
+            background: #f5f7f6;
+            border-radius: 18px;
+            padding: 10px 17px;
+            width: 100%;
+            border: 1px solid transparent;
+            &:focus {
+              outline: none;
+              border: 1px solid #212121;
+            }
+          }
+        }
+        .gender_grid {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 0;
+          margin-bottom: 24px;
+          .gender {
+            width: -webkit-calc(50% - 6px);
+            width: calc(50% - 6px);
+            height: 36px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 18px;
+            display: flex;
+            transition: 0.3s ease;
+            &:hover {
+              cursor: pointer;
+              border: 1px solid #212121;
+            }
+            &.checked {
+              border: 1px solid #212121;
+              svg {
+                display: block;
+                margin: auto 4px auto auto;
+              }
+              span {
+                margin: auto auto auto 4px;
+              }
+            }
+            svg {
+              display: none;
+              margin: auto;
+            }
+            span {
+              margin: auto;
+              font-size: 11px;
+              line-height: 14px;
+              letter-spacing: 1px;
+              color: #4f5255;
+            }
+            &:first-child {
+              margin: auto auto auto 0;
+            }
+            &:last-child {
+              margin: auto 0 auto auto;
+            }
+          }
+        }
+        .group_grid {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 18px;
+          margin-bottom: 24px;
+          .checkbox {
+            display: flex;
+            height: 48px;
+            margin: auto auto auto 0;
+            .checkbox_con {
+              display: block;
+              position: relative;
+              padding-left: 32px;
+              margin: auto 0;
+              cursor: pointer;
+              font-size: 12px;
+              line-height: 16px;
+              color: #4f5255;
+              user-select: none;
+              input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              .checkmark {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background: #ffffff;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                border-radius: 4px;
+                transition: 0.3s ease;
+              }
+              input:checked ~ .checkmark {
+                background-color: #4f5255;
+              }
+              .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              input:checked ~ .checkmark:after {
+                display: block;
+              }
+              .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid #fff;
+                border-width: 0 1px 1px 0;
+                transform: rotate(45deg);
+              }
+            }
+          }
+          .recover_pass {
+            margin: auto 0 auto auto;
+            display: flex;
+            a {
+              font-size: 12px;
+              line-height: 16px;
+              text-align: right;
+              color: rgba(79, 82, 85, 0.54);
+              position: relative;
+              transition: color 0.3s ease-in;
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 0;
+                bottom: -1px;
+                height: 1px;
+                background-color: #4f5255;
+                transition: 0.3s ease-in;
+              }
+              &:hover {
+                color: #212121;
+                &::after {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+        .txt {
+          margin-bottom: 24px;
+          p {
+            margin: 0 auto;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            color: #4f5255;
+            max-width: 241px;
+            a {
+              color: #212121;
+              position: relative;
+              text-decoration: underline;
+            }
+          }
+        }
+        .tc_btn {
+          display: flex;
+          margin-bottom: 18px;
+          button {
+            margin: 0 auto;
+            background: #4f5255;
+
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 16px 56px;
+
+            background: #212121;
+
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s ease-in;
+            font-family: "Lato", sans-serif;
+            border-radius: 24px;
+            &:hover {
+              background: #4f5255;
+            }
+            &[disabled] {
+              background: #212121;
+              color: white;
+              border: none;
+            }
+          }
+        }
+      }
+      .bottom_txt {
+        margin-bottom: 18px;
+        p {
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+          color: #4f5255;
+          span {
+            color: #212121;
+            position: relative;
+            &:hover {
+              cursor: pointer;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              width: 100%;
+              bottom: -1px;
+              height: 1px;
+              background-color: #4f5255;
+              transition: 0.3s ease-in;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tcBackdrop {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.54);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .tc_signModal {
+    &.hide_login {
+      height: 100vh;
+      overflow-y: scroll;
+    }
+  }
+  .tc_signModal .tc_modalBody {
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
+  .tc_signModal .tc_modalBody .detail {
+    padding: 0;
+  }
+  .tc_signModal .tc_modalBody .detail .tc_form-group .gender_grid .gender span {
+    font-size: 9px;
+  }
+  .tc_signModal .tc_modalBody .detail.sign_up.hide_register {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+.errorMessage {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 14px;
+  color: #b00020;
+  margin-left: 20px;
+}
+
+.invalid {
+  border: 1px solid #b00020 !important;
+}

@@ -1,0 +1,487 @@
+.xmas {
+  position: relative;
+  margin-top: -4px;
+  [class*='section-'] {
+    width: 100%;
+    position: relative;
+  }
+  .desktop {
+    display: flex !important;
+  }
+  .mobile {
+    display: none !important;
+  }
+  .b_con {
+    width: 80%;
+    position: relative;
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+  .section-1 {
+    background: #fff;
+    padding: 4px 0 0;
+    z-index: 1;
+  }
+  .section-2 {
+    padding: 4px 0;
+    z-index: 2;
+  }
+  .section-3 {
+    padding: 68px 0 0;
+    margin-bottom: 72px;
+  }
+  .cover {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid;
+    padding: 36px;
+    background: radial-gradient(50% 50% at 50% 100%, #404835 0%, rgba(64, 72, 53, 0) 100%),
+      radial-gradient(50% 50% at 50% 0%, #404835 0%, rgba(64, 72, 53, 0) 100%),
+      radial-gradient(100% 100% at 16.45% 100%, #10222c 0%, rgba(16, 34, 44, 0) 100%),
+      radial-gradient(98.72% 98.72% at 17.6% 0%, #d94033 0%, rgba(217, 64, 51, 0) 100%),
+      radial-gradient(100% 100% at 84.28% 100%, #10141d 0%, rgba(16, 20, 29, 0) 99.27%),
+      radial-gradient(100% 100% at 100% 0%, #e85a46 0%, rgba(232, 90, 70, 0) 100%);
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      background-image: url(https://cdn.shopify.com/s/files/1/0473/8377/3350/files/noise-dark.png?v=1608193929);
+      background-repeat: repeat;
+      mix-blend-mode: overlay;
+    }
+    .img_back {
+      display: grid;
+      position: absolute;
+      top: 54px;
+      left: 36px;
+      right: 36px;
+      bottom: 18px;
+      z-index: 2;
+      filter: blur(30px);
+      border-radius: 4px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .img {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      border-radius: 4px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .detail {
+        position: absolute;
+        z-index: 3;
+        bottom: 36px;
+        left: 36px;
+        right: 36px;
+        display: flex;
+        justify-content: space-between;
+        .tt {
+          font-weight: 800;
+          font-size: 48px;
+          line-height: 62px;
+          letter-spacing: 1px;
+          color: #ffffff;
+          margin: 0;
+        }
+        .link {
+          background: #ffffff;
+          border-radius: 24px;
+          padding: 16px 56px;
+          margin: auto 0 0;
+          span {
+            display: block;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #4f5255;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 0%;
+              height: 1px;
+              background-color: #4f5255;
+            }
+          }
+          &,
+          span::after {
+            transition: 0.3s ease;
+          }
+          &:hover {
+            cursor: pointer;
+            span {
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .black_slider {
+    .bg_tt {
+      font-weight: 800;
+      font-size: 42px;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .description {
+      font-size: 17px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #000;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cus_black-slider {
+      margin-bottom: 0;
+      position: relative;
+      .swiper-container {
+        .slide_box {
+          position: relative;
+          padding: 36px;
+          border-radius: 4px;
+          overflow: hidden;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-image: url(https://cdn.shopify.com/s/files/1/0473/8377/3350/files/noise-dark.png?v=1608193929);
+            background-repeat: repeat;
+            mix-blend-mode: overlay;
+          }
+          .img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .detail {
+              position: absolute;
+              z-index: 3;
+              left: 18px;
+              right: 18px;
+              bottom: 36px;
+              .tt,
+              .upto {
+                font-weight: 800;
+                font-size: 24px;
+                line-height: 32px;
+                color: #ffffff;
+                text-align: center;
+                margin: 0;
+              }
+              .tt {
+                text-transform: uppercase;
+              }
+              .upto {
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+      [class*='black_slide-'] {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.3s ease;
+        z-index: 2;
+        display: flex;
+        background: #fff;
+        outline: none;
+        svg {
+          margin: auto;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.swiper-button-disabled {
+          opacity: 0.12;
+          display: none;
+        }
+      }
+      .black_slide-prev {
+        left: -4px;
+        border-radius: 0px 4px 4px 0px;
+      }
+      .black_slide-next {
+        right: -4px;
+        border-radius: 4px 0px 0px 4px;
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+  .black_con {
+    width: 100%;
+    .bg_tt {
+      font-weight: 800;
+      font-size: 36px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #4f5255;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .black_grid {
+      width: 80%;
+      padding: 0 24px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      .list {
+        .box {
+          position: relative;
+          padding: 36px;
+          border-radius: 4px;
+          overflow: hidden;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-image: url(https://cdn.shopify.com/s/files/1/0473/8377/3350/files/noise-dark.png?v=1608193929);
+            background-repeat: repeat;
+            mix-blend-mode: overlay;
+          }
+          .img {
+            position: relative;
+            z-index: 2;
+            border-radius: 4px;
+            display: flex;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .detail {
+              position: absolute;
+              z-index: 3;
+              left: 50%;
+              bottom: 36px;
+              transform: translateX(-50%);
+              text-align: center;
+              width: 85%;
+              .bl_link {
+                border: 1px solid #fff;
+                border-radius: 24px;
+                padding: 15px 55px;
+                text-transform: uppercase;
+                background-color: transparent;
+                display: block;
+                width: max-content;
+                margin: 0 auto;
+                background-color: transparent;
+                transition: 0.3s ease;
+                span {
+                  font-weight: bold;
+                  font-size: 12px;
+                  line-height: 16px;
+                  color: #fff;
+                  display: block;
+                }
+                &:hover {
+                  background-color: #fff;
+                  span {
+                    color: #4f5255;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 962px) and (max-width: 1024px) {
+  .xmas .b_con {
+    width: 100%;
+  }
+  .xmas .black_con .black_grid {
+    width: 100%;
+  }
+  .xmas .section-3 {
+    padding: 32px 0 0;
+    margin-bottom: 36px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .tt,
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .upto {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 961px) {
+  .xmas .section-1 {
+    padding: 4px 0;
+  }
+  .xmas .section-2 {
+    padding: 0;
+  }
+  .xmas .section-3 {
+    padding: 32px 0 0;
+    margin-bottom: 36px;
+  }
+  .xmas .b_con {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .xmas .cover {
+    padding: 18px 18px 36px;
+  }
+  .xmas .cover .img .detail {
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+  }
+  .xmas .cover .img .detail .tt {
+    font-size: 42px;
+    line-height: 55px;
+  }
+  .xmas .black_con .black_grid .list .box {
+    padding: 18px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box {
+    padding: 18px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .tt,
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .upto {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .xmas .black_con .black_grid {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .xmas .black_con .bg_tt {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  .xmas .black_con .black_grid .list .box .img .detail {
+    bottom: 18px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .xmas .desktop {
+    display: none !important;
+  }
+  .xmas .mobile {
+    display: flex !important;
+  }
+  .xmas .section-1 {
+    padding: 4px 0;
+  }
+  .xmas .section-2 {
+    padding: 0px;
+  }
+  .xmas .section-3 {
+    padding: 36px 0 0px;
+    margin-bottom: 36px;
+  }
+  .xmas .b_con {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .xmas .cover {
+    padding: 18px 18px 36px;
+    background: radial-gradient(100% 100% at 0% 100%, #c49954 0%, rgba(196, 153, 84, 0) 100%),
+      radial-gradient(100% 100% at 0% 0%, #0a337e 0%, rgba(10, 51, 126, 0) 100%),
+      radial-gradient(100% 100% at 100% 100%, #31373a 0%, rgba(49, 55, 58, 0) 99.27%),
+      radial-gradient(100% 100% at 100% 0%, #d6bd8b 0%, rgba(214, 189, 139, 0) 100%);
+  }
+  .xmas .cover .img .detail {
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .xmas .cover .img .detail .tt {
+    font-size: 24px;
+    line-height: 32px;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 18px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box {
+    padding: 18px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .tt,
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .upto {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .tt {
+    text-transform: capitalize;
+  }
+  .xmas .black_slider .cus_black-slider .swiper-container .slide_box .img .detail .upto {
+    text-transform: none;
+  }
+  .xmas .black_slider .cus_black-slider [class*='black_slide-'].swiper-button-disabled {
+    display: flex;
+  }
+  .xmas .black_con .bg_tt {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  .xmas .black_con .black_grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0 4px;
+  }
+  .xmas .black_con .black_grid .list .box {
+    padding: 18px;
+  }
+  .xmas .black_con .black_grid .list .box .img .detail {
+    bottom: 18px;
+  }
+  .xmas .black_con .black_grid .list:nth-child(2) .box .img .detail .bl_link {
+    padding: 15px 66px;
+  }
+}

@@ -1,0 +1,211 @@
+.collection-count {
+  // position: absolute;
+  // z-index: 99;
+  // top: 580px;
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  .count-grid-col {
+    max-width: 100%;
+    margin: 0 auto;
+    .count-grid-item1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      .box-bg {
+        background: #bfd3f9;
+      }
+      .count-box1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .count-timer-title {
+          h1 {
+            font-family: Cantata One;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+            line-height: 32px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #000000;
+            // text-shadow: 0px 14px 12px rgba(34, 34, 34, 0.25);
+            margin-bottom: 15px;
+          }
+          p {
+            font-family: Cantata One;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 19px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #000000;
+            text-align: center;
+          }
+        }
+      }
+      .count-right {
+        background: #bfd3f9;
+        padding: 20px 12px 12px 12px;
+        .homepage-count {
+          padding: 0;
+          margin: 0 auto;
+          box-shadow: unset;
+          background: transparent;
+          width: 202px;
+        }
+        .homepage-count .count-grid-col .count-grid-item .count-box .timer-width .timer-f .timer {
+          background: #fff;
+        }
+        .homepage-count .count-grid-col .count-grid-item .count-box .count-timer .s {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .collection-count {
+    border: 10px solid #bfd3f9;
+  }
+  .collection-count .count-grid-col {
+    margin: unset;
+  }
+  .tc_product-page
+    .mainContentProductPage
+    .new-count-p-section
+    .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right::after {
+    border-left: unset !important;
+  }
+  .collection-count .count-grid-col .count-grid-item1 {
+    grid-template-columns: 1fr;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-right .homepage-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-box1 {
+    display: none;
+    padding: 20px 0px 18px 0;
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 1px solid #a3a3a3;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-box1 .count-timer-title h1 {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 1px;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-box1 .count-timer-title p {
+    font-size: 14px;
+    line-height: 12px;
+    letter-spacing: 1px;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-right {
+    background: #fff;
+    padding: 10px 15px 9px 15px;
+  }
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box
+    .timer-width
+    .timer-txt {
+    font-size: 9px;
+  }
+
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box
+    .timer-width
+    .timer-f
+    .timer {
+    background: #bfd3f9;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 3px;
+  }
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box {
+    grid-template-columns: auto 1fr;
+  }
+  .collection-count .count-grid-col .count-grid-item1 .count-right .homepage-count .homepage-count-title h1 {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 0;
+    padding-right: 15%;
+  }
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box
+    .timer-width
+    .timer-f
+    .l-border {
+    padding-left: 7px;
+  }
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box
+    .timer-width
+    .timer-f
+    .r-border {
+    padding-right: 7px;
+  }
+  .collection-count
+    .count-grid-col
+    .count-grid-item1
+    .count-right
+    .homepage-count
+    .count-grid-col
+    .count-grid-item
+    .count-box
+    .count-timer
+    .s {
+    background: #bfd3f9;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 3px 0;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .collection-count .count-grid-col .count-grid-item1 .count-box1 {
+      padding: 20px 0px 18px 0;
+      margin: 0 auto;
+      width: 60%;
+      border-bottom: 1px solid #a3a3a3;
+    }
+  }
+}

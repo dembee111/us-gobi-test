@@ -1,0 +1,99 @@
+.side-drawer {
+  .drawer {
+    height: 100%;
+    background: #f5f7f6;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 284px;
+    max-width: 284px;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+    .mobile-menu-nav {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      width: 100%;
+      .side_top {
+        margin: 0 0 auto;
+        width: 100%;
+      }
+      .side_bottom {
+        width: 100%;
+        margin: auto 0 0;
+        .location_cus_btn {
+          padding: 18px;
+          .loc__btn {
+            border: 0;
+            background: transparent;
+            display: flex;
+            width: 100%;
+            &:hover {
+              cursor: pointer;
+            }
+            .loc__icon {
+              margin: auto 0;
+              width: 36px;
+              height: 36px;
+              display: flex;
+              svg {
+                margin: auto;
+              }
+            }
+            .tt {
+              margin: auto 0;
+              font-size: 12px;
+              line-height: 16px;
+              color: #4f5255;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu-close-btn {
+    position: fixed;
+    top: 0;
+    right: 284px;
+    z-index: 200;
+    background: #fff;
+    transform: translateX(1000%);
+    transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+    .close-button {
+      border: 0;
+      background: #fff;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        margin: auto;
+      }
+    }
+  }
+}
+.side-drawer.open {
+  .drawer {
+    transform: translateX(0);
+    display: block;
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .menu-close-btn {
+    transform: translateX(0%);
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}
+
+.side-drawer ul {
+  list-style: none;
+}
+
+@media only screen and (max-width: 336px) {
+  .side-drawer .menu-close-btn .close-button {
+    width: 36px;
+  }
+}

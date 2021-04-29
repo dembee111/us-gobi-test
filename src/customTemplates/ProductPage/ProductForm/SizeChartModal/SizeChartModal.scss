@@ -1,0 +1,332 @@
+.modal-size-chart {
+  position: fixed;
+  z-index: 801;
+  left: 0;
+  right: 0;
+  top: 96px;
+  width: 100%;
+  height: -webkit-calc(100% - 96px);
+  height: calc(100% - 96px);
+  overflow: hidden;
+  #size-chart-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.54);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    top: 48px;
+  }
+
+  /* Modal Content */
+  .modal-content-size-chart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    margin: auto;
+    padding: 0;
+    width: 640px;
+    box-shadow: 5px 20px 40px rgba(0, 0, 0, 0.1), 5px 10px 10px rgba(0, 0, 0, 0.2);
+    max-width: 640px;
+    height: 80vh;
+    overflow-y: scroll;
+  }
+
+  .modal-size-chart img {
+    max-width: 100%;
+  }
+
+  th.background-white {
+    background-color: transparent;
+  }
+
+  #size-image {
+    display: block;
+    z-index: 2;
+    padding: 24px 75px 0 75px;
+    max-width: 100%;
+  }
+
+  #size-image-mobile {
+    display: none;
+  }
+
+  .newRowMobile {
+    display: none;
+  }
+
+  .partName {
+    display: table-cell;
+  }
+  .region {
+    display: table-cell;
+  }
+
+  /* The Close Button */
+  .close-size-chart {
+    color: black;
+    float: right;
+    margin-top: 28px;
+    margin-right: 28px;
+    // background: url("../../../../../assets/close-icon.svg") no-repeat;
+    width: 16px;
+    height: 16px;
+  }
+
+  .close-size-chart:hover,
+  .close-size-chart:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header-size-chart {
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .modal-body-size-chart {
+    padding: 2px 16px;
+    overflow-y: auto;
+    z-index: 3;
+    display: block;
+    width: 100%;
+  }
+
+  .modal-footer-size-chart {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  .modal-body-size-chart th,
+  tbody td {
+    font-size: 12px;
+    text-align: center;
+    font-weight: normal;
+    padding: 8px 0 8px 0;
+    color: #4a4a4a;
+  }
+
+  .modal-body-size-chart thead th {
+    background-color: #dddddd;
+    font-weight: 300;
+    padding: 6px 0;
+    border: 0;
+    font-family: 'Lato', sans-serif; //Light
+    border-left: 0px solid #dddd;
+    border-bottom: 1px solid #fff;
+    &.background-white {
+      background-color: #dddddd;
+    }
+    &.header {
+      font-weight: normal;
+    }
+    border-top: 0px solid #dddd;
+  }
+
+  .modal-body-size-chart thead tr th:last-child {
+    border-right: 1px solid #dddd;
+  }
+
+  .modal-body-size-chart tbody th {
+    background-color: #dddd;
+    font-weight: normal;
+    padding: 12px 0;
+    border-top: 1px solid white;
+  }
+
+  .modal-body-size-chart tbody td {
+    border-left: 1px solid #dddd;
+    font-family: 'Lato', sans-serif; //Light
+    font-weight: 300;
+  }
+
+  .modal-body-size-chart tbody td:first-child {
+    background-color: #dddd;
+  }
+
+  .modal-body-size-chart table {
+    border-spacing: 0px;
+    width: 100% !important;
+    max-width: 640px !important;
+    table-layout: fixed;
+  }
+
+  .modal-content-size-chart label {
+    font-size: 12px;
+    padding: 8px 24px 8px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .fieldset-size-chart {
+    padding: 24px 24px 0 24px;
+    border: none;
+    float: left;
+
+    @mixin visuallyHidden {
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+      position: absolute;
+      height: 1px;
+      width: 1px;
+    }
+
+    input {
+      @include visuallyHidden;
+    }
+
+    $colorTextBody: #1c1d1d;
+
+    input[type='radio']:focus + label {
+      background-color: rgba($colorTextBody, 0.05);
+      box-shadow: 0 0 0 1px $colorTextBody;
+    }
+
+    input[type='radio']:checked + label {
+      box-shadow: 0 0 0 2px $colorTextBody;
+    }
+  }
+
+  .modal-body-size-chart table {
+    padding: 0 24px;
+    margin: 24px 0;
+    background-color: white !important;
+    overflow: hidden;
+  }
+
+  .modal-body-size-chart table tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+  }
+  .modal-body-size-chart table .rowSizeChartInch td {
+    position: relative;
+  }
+  .modal-body-size-chart .tBodySizeChartInch {
+    overflow: hidden;
+  }
+  .modal-body-size-chart table .rowSizeChartInch td:hover::after {
+    background: rgba(0, 0, 0, 0.04);
+    content: '';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: 0;
+  }
+  .modal-content-size-chart .fieldset-size-chart input[type='radio']:checked + label {
+    background: black;
+    color: white;
+    box-shadow: 0 0 0 1px #000;
+  }
+
+  .modal-content-size-chart .fieldset-size-chart label {
+    box-shadow: 0 0 0 1px #000;
+  }
+
+  .modal-content-size-chart .fieldset-size-chart {
+    margin: 0;
+  }
+
+  //   #size-chart-inch-input {
+  //     :checked: true;
+  //   }
+
+  @media only screen and (max-width: 768px) {
+    .sizeChartBtn {
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .modal-content-size-chart {
+      position: absolute;
+      margin: auto;
+      padding: 0;
+      width: 320px;
+      box-shadow: 5px 20px 40px rgba(0, 0, 0, 0.1), 5px 10px 10px rgba(0, 0, 0, 0.2);
+      max-width: 320px;
+      left: 0;
+      right: 0;
+    }
+    #size-image {
+      display: none;
+    }
+    #size-image-mobile {
+      display: block;
+      z-index: 2;
+      width: 100%;
+    }
+    .fieldset-size-chart {
+      padding: 10px 7px;
+    }
+    colgroup {
+      display: none;
+    }
+    .newRowMobile {
+      display: table-row;
+    }
+    .partName {
+      display: none;
+    }
+    .region {
+      display: none;
+    }
+    .background-white {
+      background-color: unset;
+    }
+    .emptyHeaderCell {
+      display: none;
+    }
+    .modal-body-size-chart tbody th {
+      border-top: none;
+    }
+    .modal-body-size-chart tbody td {
+      border-left: none;
+      padding: 2px 0 2px 0;
+    }
+    .modal-body-size-chart table {
+      padding: 12px;
+    }
+    .close-size-chart {
+      margin-right: 16px;
+      margin-top: 16px;
+    }
+
+    .modal-content-size-chart label {
+      margin-bottom: 6px;
+    }
+
+    .modal-header-size-chart {
+      padding: 0;
+    }
+    .modal-body-size-chart thead th.size {
+      background-color: white;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .modal-size-chart {
+      padding-top: 0;
+    }
+  }
+
+  #table-size-chart-cm {
+    display: none;
+  }
+
+  .fieldset-size-chart .variant-input {
+    display: inline;
+  }
+}

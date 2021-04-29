@@ -1,0 +1,108 @@
+.sortByDropDownShell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sortByDropDownMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 500;
+  padding: 24px 36px 24px 24px;
+  right: 0;
+  background-color: #fff;
+  transition: 0.5s ease all;
+  cursor: pointer;
+  .sortByP {
+    position: relative;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #4f5255;
+    padding: 8px 0;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 1px;
+      bottom: 7px;
+      z-index: 1;
+      background-color: #4f5255;
+      transition: 0.3s ease-in;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .active1 {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      bottom: 7px;
+      z-index: 1;
+      background-color: #4f5255;
+      transition: 0.3s ease-in;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    width: unset;
+  }
+}
+
+.sortByTriggerMain {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 36px;
+    color: #4f5255;
+  }
+}
+.filterSortBoxChecked {
+  background: white;
+  margin-right: 8px;
+  border: 1px solid #212121;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: relative;
+  .filterSortBoxCheckedInner {
+    width: 12px;
+    height: 12px;
+    background: #212121;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+  }
+}
+.filterSortBox {
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 8px;
+}

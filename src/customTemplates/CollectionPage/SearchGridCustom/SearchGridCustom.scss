@@ -1,0 +1,190 @@
+.mobileSearchGrid {
+  display: none;
+  .product-grid-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 24px;
+  }
+  .mobileSearchFilterOuter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    background-color: white;
+    z-index: 10000;
+    .mobileSearchFilterBottomFixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-color: white;
+      display: flex;
+      .buttonGroup {
+        position: relative;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        height: fit-content;
+      }
+
+      .applyButton {
+        margin-right: 18px;
+        margin-left: 2px;
+        width: 50%;
+        height: 36px;
+        cursor: pointer;
+        background: #4f5255;
+        border-radius: 4px;
+        text-align: center;
+        p {
+          width: fit-content;
+          height: fit-content;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          /* identical to box height, or 133% */
+
+          letter-spacing: 1px;
+
+          color: #ffffff;
+        }
+      }
+    }
+    .mobileSearchFilterClearFixed {
+      position: absolute;
+      top: 0;
+      // left: 0;
+      right: 0;
+      // height: 60px;
+      width: 36px;
+      height: 36px;
+      margin-top: 18px;
+      margin-right: 18px;
+      // background-color: white;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .col-6 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+}
+
+.desktopSearchGrid {
+  display: none;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 992px) {
+  .mobileSearchGrid {
+    display: block;
+  }
+
+  .desktopSearchGrid {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .mobileSearchGrid {
+    .product-grid-col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 8px;
+      grid-row-gap: 24px;
+      .grid-col-item {
+        position: relative;
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .mobileSearchGrid {
+    display: none;
+  }
+
+  .desktopSearchGrid {
+    display: block;
+  }
+  .desktopSearchGrid {
+    .backToTopMain {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      background: #f5f7f6;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      svg {
+        top: 50%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+    }
+    .new-side-layout {
+      display: flex;
+      .new-sidebox-left {
+        position: relative;
+        max-width: 220px;
+        padding: 0;
+        left: -50%;
+        // transform: translateX(-200%);
+        margin-left: -220px;
+      }
+      .new-sidebox-open {
+        // transform: translateX(0px);
+        min-width: 220px;
+        margin-left: 0px;
+        left: 0%;
+        transition: 0.5s ease all;
+      }
+
+      .new-sidebox-right {
+        position: relative;
+        margin: 0 0 0 auto;
+        transition: 0.6s;
+      }
+      .close-right-p {
+        width: calc(100% - 220px);
+      }
+      .open-right-p {
+        width: 100%;
+      }
+    }
+
+    .product-grid-col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 8px;
+      grid-row-gap: 24px;
+      .grid-col-item {
+        position: relative;
+      }
+      .grid-col-5 {
+        grid-column: 1 / 5;
+        padding: 0 0px 0px;
+      }
+    }
+  }
+}
+
+.gridMain {
+  .hidden {
+    display: none;
+  }
+}

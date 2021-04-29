@@ -1,0 +1,422 @@
+.ourHistoryPage {
+  .section-header {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .section-header {
+      margin-top: 75px;
+      margin-bottom: 50px;
+    }
+  }
+  .pswp-thumbnail {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+    overflow-y: hidden;
+    position: relative;
+    height: 27.5vw;
+  }
+
+  .pswp-thumbnail img {
+    width: 100%;
+  }
+
+  /*============================================================================
+    Grid Breakpoints and Class Names
+      - Do not change breakpoint variable names
+      - Medium breakpoint is also set in theme.js.liquid and inline
+      throughout some customTemplates. Be weary of changing unless you know what you're doing.
+  ==============================================================================*/
+
+  $grid-medium: 769px;
+
+  $grid-large: 960px;
+
+  $grid-widescreen: 1050px;
+
+  $small: 'small';
+
+  $medium: 'medium';
+
+  $medium-down: 'medium-down';
+
+  $medium-up: 'medium-up';
+
+  $large: 'large';
+
+  $large-down: 'large-down';
+
+  $large-up: 'large-up';
+
+  $widescreen: 'widescreen';
+
+  $grid-breakpoint-has-widths: ($small, $medium-up, $widescreen);
+
+  $grid-breakpoint-has-utility: ($small, $medium-down, $medium-up, $widescreen);
+
+  $grid-breakpoint-has-push: ($medium-up, $widescreen);
+
+  // The `$grid-breakpoints` list is used to build our media queries.
+
+  // You can use these in the media-query mixin.
+
+  $grid-breakpoints: (
+    $small '(max-width: #{$grid-medium - 1})',
+    $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+    $medium-down '(max-width: #{$grid-large - 1})',
+    $medium-up '(min-width: #{$grid-medium})',
+    $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+    $large-down '(max-width: #{$grid-widescreen - 1})',
+    $large-up '(min-width: #{$grid-large})',
+    $widescreen '(min-width: #{$grid-widescreen})'
+  );
+
+  $gutter: 30px;
+
+  /*================ Media Query Mixin ================*/
+
+  @mixin media-query($media-query) {
+    @each $breakpoint in $grid-breakpoints {
+      $name: nth($breakpoint, 1);
+      $declaration: nth($breakpoint, 2);
+
+      @if $media-query == $name and $declaration {
+        @media only screen and #{$declaration} {
+          @content;
+        }
+      }
+    }
+  }
+
+  /*================ Partials | Featured row section ================*/
+
+  .feature-row {
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+
+    @include media-query($widescreen) {
+      margin: 0 6%;
+    }
+
+    @include media-query($medium-down) {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  @include media-query($medium-down) {
+    .feature-row--small-none {
+      display: block;
+    }
+  }
+
+  .feature-row__item {
+    min-width: 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+
+    @include media-query($medium-down) {
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+
+  .feature-row__image {
+    display: block;
+    margin: 0 auto;
+
+    @include media-query($medium-down) {
+      -ms-flex-order: 1;
+      order: 1;
+    }
+  }
+
+  .feature-row__text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    letter-spacing: 0.025em;
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+
+    @include media-query($medium-down) {
+      -ms-flex-order: 2;
+      order: 2;
+      text-align: center;
+      padding-top: $gutter / 2;
+      padding-bottom: 0; // always last element on mobile
+    }
+    .rte {
+      margin: 0;
+    }
+    .btn {
+      margin: ($gutter / 2) ($gutter / 3) 0 0;
+    }
+  }
+
+  @include media-query($medium-up) {
+    .feature-row__text--left {
+      padding-left: $gutter * 2;
+    }
+
+    .feature-row__text--right {
+      padding-right: $gutter * 2;
+    }
+  }
+  .index-section {
+    margin: 40px 0;
+    @media only screen and (min-width: 769px) {
+      margin: 75px 0;
+    }
+  }
+
+  .medium-up--three-quarters {
+    @media only screen and (min-width: 769px) {
+      width: 75%;
+    }
+  }
+
+  .feature-row {
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    @media only screen and (min-width: 1050px) {
+      margin: 0 6%;
+    }
+  }
+
+  .pswp-gallery {
+    line-height: 0;
+  }
+
+  .page-width,
+  .page-full {
+    padding: 0 17px;
+  }
+
+  .page-width {
+    max-width: 1500px;
+    margin: 0 auto;
+    .grid__item {
+    }
+  }
+  body {
+    letter-spacing: 0.025em;
+    line-height: 1.6;
+  }
+
+  // .feature-row__text {
+  //   font-size: 1.1em;
+  //   padding-top: 30px;
+  //   padding-bottom: 30px;
+  // }
+
+  // .clearfix {
+  //   &:after {
+  //     content: '';
+  //     display: table;
+  //     clear: both;
+  //   }
+  // }
+
+  // @mixin clearfix() {
+  //   &::after {
+  //     content: '';
+  //     display: table;
+  //     clear: both;
+  //   }
+  // }
+
+  // .image-row {
+  //   @include clearfix;
+  // }
+
+  // .image-row__placeholder {
+  //   float: left;
+  //   width: 33.33%;
+
+  //   .image-row--gutters & {
+  //     width: 32%;
+  //     margin: 0 1% 2%;
+
+  //     &:first-child {
+  //       margin-left: 0;
+  //     }
+
+  //     &:last-child {
+  //       margin-right: 0;
+  //     }
+  //   }
+  // }
+
+  // .image-row__image {
+  //   position: relative;
+  //   min-height: 1px;
+  //   float: left;
+
+  //   &:after {
+  //     content: '';
+  //     display: block;
+  //     height: 0;
+  //     width: 100%;
+  //   }
+
+  //   img {
+  //     display: block;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //   }
+  // }
+
+  // // Zoom cursor unless inside a link
+
+  // .image-row__image .js-photoswipe__zoom {
+  //   cursor: zoom-in;
+  // }
+
+  // .image-row__image a .js-photoswipe__zoom {
+  //   cursor: pointer;
+  // }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .ourHistoryPage {
+    .gZdGHD {
+      min-height: 60vh;
+    }
+    .iuDjNv {
+      background-attachment: initial !important;
+    }
+    .section-header {
+      h1 {
+        font-size: 24px;
+        line-height: 26px;
+        letter-spacing: 0.025em;
+        padding: 0 20px;
+      }
+    }
+    .index-section {
+      .text-center {
+        display: block;
+      }
+      div {
+        .gZdGHD {
+          min-height: 40vh;
+        }
+      }
+    }
+    .feature-row__image {
+      width: 100%;
+    }
+    .feature-row__text {
+      font-size: 13px;
+    }
+    .h-image {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 20px 20px 20px;
+    }
+    .image-wrap {
+      margin: 0 auto;
+    }
+    .image-wrap-width {
+      max-width: 200px !important;
+    }
+    .h2 {
+      display: flex;
+      justify-content: center;
+      font-size: 1.6125em;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .grid__item {
+      padding: 0px;
+      .h2 {
+        text-align: center;
+      }
+      .rte {
+        p {
+          font-size: 13.6px;
+          letter-spacing: 0.025em;
+          line-height: 1.6;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 956px) {
+  .ourHistoryPage {
+    .section-header {
+      h1 {
+        font-size: 24px;
+        letter-spacing: 0.025em;
+      }
+    }
+    .feature-row__image {
+      width: 100%;
+    }
+    .feature-row__text {
+      font-size: 13px;
+      .rte {
+      }
+    }
+    .h-image {
+      max-width: 500px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+    .image-wrap {
+      margin: 0 auto;
+    }
+    .image-wrap-width {
+      max-width: 200px !important;
+    }
+    .h2 {
+      display: flex;
+      justify-content: center;
+      font-size: 1.6125em;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .grid__item {
+      padding: 0 40px;
+      margin: 40px 0;
+      .h2 {
+        text-align: center;
+      }
+      .rte {
+        p {
+          font-size: 13.6px;
+          letter-spacing: 0.025em;
+          line-height: 1.6;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

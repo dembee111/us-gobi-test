@@ -1,0 +1,240 @@
+// .container-box {
+//   display: flex;
+//   flex-wrap: wrap;
+//   max-width: 84%;
+//   margin: 0 auto;
+//   justify-content: center;
+//   .grid-box {
+//     width: 246px;
+//     height: 320px;
+//     margin: 10px;
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//       overflow: hidden;
+//       object-fit: contain;
+//     }
+//   }
+// }
+
+// .container-full {
+//   max-width: 100%;
+//   padding: 0 0px;
+//   margin: 0 auto;
+
+//   @media (min-width: 992px) {
+//     width: 85%;
+//     padding: 0 24px;
+//   }
+// }
+
+.text-style h1 {
+  font-weight: 800;
+  text-align: center;
+  padding: 72px 0 36px;
+  color: #282828;
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.insta-container {
+  //   backface-visibility: hidden;
+  //   transform-style: preserve-3d;
+
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  //   grid-template-columns: repeat(5, 245px);
+  //   grid-gap: 5rem;
+
+  //   &.desktop-card {
+  //     display: none;
+
+  //     @media (min-width: 1200px) {
+  //       display: block;
+  //     }
+  //   }
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.insta-card-hover {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  .img {
+    width: 100%;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    picture {
+      width: 100%;
+    }
+
+    img {
+      margin: auto;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+}
+
+.insta-card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 99.5%;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  border-radius: 4px;
+  transition: 0.777s ease;
+  background: linear-gradient(0deg, rgba(5, 5, 5, 0.25), rgba(5, 5, 5, 0.25));
+  margin-right: 10px;
+}
+
+.insta-card-hover:hover .insta-card-overlay {
+  opacity: 1;
+}
+
+.overlay-center {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-center svg {
+  margin-bottom: 35px;
+}
+
+.link_btn {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 4px 25px;
+  text-transform: uppercase;
+  display: block;
+  width: -webkit-max-content;
+  width: max-content;
+  margin: 0 auto;
+  background-color: #fff;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: #ffffff;
+
+    span {
+      color: #4f5255;
+    }
+  }
+
+  span {
+    position: relative;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 16px;
+    color: #000;
+    display: block;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.readMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 72px;
+  .read-btn {
+    cursor: pointer;
+    background: #fff;
+    // display: inline-block;
+    color: #282828;
+    padding: 15px 100px;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #282828;
+    border-radius: 24px;
+    &:hover {
+      background: #282828;
+      color: white;
+    }
+  }
+}
+.mobile-slider {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 300px) {
+  .mobile-slider {
+    display: block;
+    .swiper-slide.card-hover {
+      width: 200px !important;
+    }
+  }
+
+  .insta-container {
+    display: none;
+  }
+  .readMore {
+    margin-bottom: 36px;
+  }
+  .text-style h1 {
+    padding: 36px 0 18px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .mobile-slider {
+    display: block;
+    .swiper-slide.card-hover {
+      width: 200px !important;
+    }
+  }
+
+  .insta-container {
+    display: none;
+  }
+  .text-style h1 {
+    padding: 36px 0 18px;
+  }
+}

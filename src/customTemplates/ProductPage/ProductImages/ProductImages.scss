@@ -1,0 +1,192 @@
+.customPlayIconPlayer {
+  width: 100%;
+  height: 100%;
+  svg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+  }
+}
+
+.tc_desktop {
+  display: block;
+}
+.tc_mobile {
+  display: none;
+}
+
+.mobile_img_slide {
+  position: relative;
+  .free_tag-Tablet {
+    position: absolute;
+    display: none;
+    z-index: 3;
+    top: 12px;
+    right: 12px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    &:hover {
+      cursor: auto;
+    }
+    @media only screen and (min-width: 961px) and (max-width: 1024px) {
+      display: block;
+    }
+  }
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    position: absolute;
+    bottom: 8px;
+  }
+  .swiper-pagination-bullet {
+    width: 20px !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+  }
+  .swiper-pagination {
+    position: absolute !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: black !important;
+  }
+}
+.productImageRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  .product_img_col {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    &:first-child {
+      .free_tag {
+        display: block;
+      }
+    }
+    .free_tag {
+      position: absolute;
+      display: none;
+      z-index: 3;
+      top: 12px;
+      right: 12px;
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 8px 20px;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #000000;
+      &:hover {
+        cursor: auto;
+      }
+    }
+    .hover_img {
+      width: 100% !important;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      &:hover {
+        cursor: zoom-in;
+        .back {
+          z-index: 3;
+        }
+        img {
+          z-index: 2;
+        }
+      }
+      &.activeZoom {
+        cursor: zoom-out;
+        .back {
+          opacity: 1;
+          background-size: 250%;
+          -web-kit-transition: background-size 0.5s ease-out;
+          -moz-transition: background-size 0.5s ease-out;
+          transition: background-size 0.5s ease-out;
+        }
+      }
+      .back {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        background-size: 100%;
+        opacity: 0;
+        -web-kit-transition: background-size 0.5s ease-out;
+        -moz-transition: background-size 0.5s ease-out;
+        transition: background-size 0.5s ease-out;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 3;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    .mainVideoPlayer {
+      position: relative;
+      video {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1.03);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .tc_desktop {
+    display: none;
+  }
+  .tc_mobile {
+    display: block;
+  }
+  .mobile_img_slide .swiper-slide .tc_custom-player div {
+    height: 94.48vw !important;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .tc_desktop {
+    display: none;
+  }
+  .tc_mobile {
+    display: block;
+  }
+  .mobile_img_slide .swiper-slide {
+    width: auto;
+  }
+  .mobile_img_slide .swiper-slide div {
+    height: -webkit-calc(100vh - 92px);
+    height: calc(100vh - 92px);
+  }
+  .mobile_img_slide .swiper-slide .tc_custom-player div {
+    height: -webkit-calc(100vh - 92px) !important;
+    height: calc(100vh - 92px) !important;
+  }
+}

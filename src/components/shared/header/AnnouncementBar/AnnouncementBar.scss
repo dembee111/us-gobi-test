@@ -1,0 +1,24 @@
+.hidden {
+  transition: all 400ms ease;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  margin-top: 0;
+}
+.active {
+  transition: all 400ms ease;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  margin-top: 0;
+}
+
+.other {
+  .announcement-section {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .announcement-section {
+    display: none;
+  }
+}
