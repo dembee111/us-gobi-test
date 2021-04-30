@@ -51,11 +51,7 @@ const SideDrawer1 = (props) => {
                 </div>
                 <div className="card-side-body">
                     <div className="description">
-                        <p>{`Here's a treat! A complimentary GOBI GIFT BOX with your order.
-
-                            We recommend this box so you can keep your cashmere in perfect shape. As a luxury box, it makes for a fancy presentation when gifting cashmere to your loved ones.
-
-                            Select your gift to add to bag.`}</p>
+                        <p>{`Here's a treat! A complimentary CASHMERE SCARF with your order.\nWe're gifting an ultra-soft, cozy scarf to help you feel warm on the outside and feel good on the inside.\n Select your gift to add to bag.`}</p>
                     </div>
                     <div className="gift-list">
                         {products && products.map((product, i) => (

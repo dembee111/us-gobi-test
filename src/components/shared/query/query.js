@@ -1242,3 +1242,75 @@ export const getBundleCollection = gql`
     }
   }
 `;
+
+export const getProductsFromCollectionLowPrice = gql`
+  query getProductsFromCollectionHandle($handle: String!, $currencyCode: CurrencyCode!, $first: Int!) {
+    collectionByHandle(handle: $handle) {
+      id
+      title
+      description
+      handle
+      products(first: $first) {
+        edges {
+          node {
+            id
+            title
+            availableForSale
+            images(first: 3) {
+              edges {
+                node {
+                  id
+                  altText
+                  originalSrc
+                }
+              }
+            }
+            options(first: 3) {
+              name
+              values
+            }
+            tags
+            handle
+
+            variants(first: 1) {
+              edges {
+                node {
+                  selectedOptions {
+                    name
+                    value
+                  }
+                  quantityAvailable
+                  sku
+                  priceV2 {
+                    amount
+                  }
+                  presentmentPrices(first: 1, presentmentCurrencies: [$currencyCode]) {
+                    edges {
+                      node {
+                        compareAtPrice {
+                          amount
+                          currencyCode
+                        }
+                        price {
+                          amount
+                          currencyCode
+                        }
+                      }
+                    }
+                  }
+                  id
+                  title
+                }
+              }
+            }
+          }
+          cursor
+        }
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
+      }
+    }
+  }
+`;

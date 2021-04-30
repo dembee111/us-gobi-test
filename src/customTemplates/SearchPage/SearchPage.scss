@@ -6,7 +6,7 @@
   .ais-SearchBox-reset {
     top: 10px;
   }
-  input[type='search'] {
+  input[type="search"] {
     -webkit-appearance: none;
   }
   input {
@@ -37,7 +37,7 @@
     right: 10px;
   }
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0px;
     right: 0px;
@@ -94,5 +94,11 @@
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width: 1640px) and (min-width: 1024px) {
+  .show {
+    padding: 0 2px 24px !important;
   }
 }

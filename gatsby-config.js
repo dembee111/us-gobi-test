@@ -127,6 +127,9 @@ module.exports = {
     },
     'gatsby-plugin-next-seo',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-image',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

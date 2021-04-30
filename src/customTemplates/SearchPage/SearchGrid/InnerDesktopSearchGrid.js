@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import CountPage from '../CountPage/CountPage';
 import CustomProgressBar from '../../../components/shared/customProgessBar/CustomProgressBar';
 import CollectionSingleBanner1 from '../CollectionSingleBanner/CollectionSingleBanner1';
+import CollectionSingleBanner2 from '../CollectionSingleBanner/CollectionSingleBanner2';
+import CollectionSingleBanner3 from '../CollectionSingleBanner/CollectionSingleBanner3';
+import CollectionSingleBanner4 from '../CollectionSingleBanner/CollectionSingleBanner4';
 const mapStateToProps = (state) => ({
   currency: state.currency,
 });
@@ -39,9 +42,72 @@ function InnerDesktopSearchGrid(props) {
         if (singleHit.specialType) {
           if (singleHit.specialType === 'countpage' && props.source && props.source.origin === 'collection') {
             tempProductArray.push(
-              <div key={makeid(4)} style={{ padding: '0 2px 24px' }} className="col-12">
-                {/* <CountPage /> */}
-                {/* <CustomProgressBar /> */}
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'new-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'women-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'women' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-shawl' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-scarf' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'new' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner3 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'home' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner3 />
+              </div>,
+
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'men-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-hat' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-socks' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-hat-and-scarf-set' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'sale' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner1 />
               </div>,
             );
           }
@@ -69,11 +135,75 @@ function InnerDesktopSearchGrid(props) {
         if (singleHit.specialType) {
           if (singleHit.specialType === 'countpage' && props.source && props.source.origin === 'collection') {
             sendingArray.push(
-              <div key={makeid(4)} style={{ padding: '0 2px 24px' }} className="col-lg-3 col-4">
-                <CollectionSingleBanner1 />
-                {/* <CountPage /> */}
-                {/* <CustomProgressBar /> */}
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'new-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
               </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'women-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'women' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-shawl' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 2px 24px' }} className={
+                props.source.handle === 'accessories-scarf' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner2 />
+              </div>,
+
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'new' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner3 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'home' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner3 />
+              </div>,
+
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'men-accessories' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-hat' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-socks' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'accessories-hat-and-scarf-set' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner4 />
+              </div>,
+
+              <div key={makeid(4)} style={{ padding: '0 0px 24px' }} className={
+                props.source.handle === 'sale' ? 'col-lg-3 col-4 show' : 'hide'
+              }>
+                <CollectionSingleBanner1 />
+              </div>,
+
             );
           }
         } else {

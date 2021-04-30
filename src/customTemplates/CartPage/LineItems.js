@@ -8,7 +8,6 @@ export default function LineItems(props) {
   if (props.isGiftItem) {
     return (
       <LineItem
-        key={props.key}
         isGiftItem={props.isGiftItem}
         lineItem={props.lineItem}
         url={props.url}
@@ -16,12 +15,13 @@ export default function LineItems(props) {
         size={props.size}
         gender={props.gender}
         currency={props.currency}
+        optionBtn={props.optionBtn}
+        setOptionBtn={props.setOptionBtn}
       />
     )
   } else {
     return (
       <LineItem
-        key={props.key}
         isGiftItem={props.isGiftItem}
         lineItem={props.lineItem}
         url={props.url}
@@ -29,6 +29,8 @@ export default function LineItems(props) {
         size={props.size}
         gender={props.gender}
         currency={props.currency}
+        optionBtn={props.optionBtn}
+        setOptionBtn={props.setOptionBtn}
       />
     )
   }

@@ -70,8 +70,8 @@ export default function ModifyQuantity(props) {
             aria-label="Increase item quantity by one"
             onClick={() => incrementQuantity(props.lineItem.node)}
             disabled={
-              props.lineItem.node.quantity >= props.lineItem.node.variant.quantityAvailable ||
-              (props.basicLine.count > 3 && !isGiftCard(props.lineItem.node.variant.product))
+              props.lineItem.node.quantity >= props.lineItem.node.variant.quantityAvailable &&
+              !isGiftCard(props.lineItem.node.variant.product)
             }
           >
             <div className="icon">

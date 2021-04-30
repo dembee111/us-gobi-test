@@ -4,7 +4,7 @@ import moment from 'moment-timezone';
 const apiURL = 'http://worldtimeapi.org/api/timezone/Asia/Ulaanbaatar';
 
 //EUROPE TIME -aar eniig uurchilnu shvv ULAANBATAR EUROPE-s +7 Z   //us deer 7 oog hasna shuuuuuuuu !!!!!
-const countDownStartDate = '2021-05-01T08:00';
+const countDownStartDate = '2021-04-30T08:00';
 const countDownEndDate = '2021-05-11T08:00';
 const dateFormatStr = 'YYYY-MM-DDTHH:mm:ss';
 

@@ -187,10 +187,6 @@ function LineItems(props) {
   });
 
   props.checkout.lineItems.edges.map((lineItem, index) => {
-    let basicLine = handleCheckBasicCollection(lineItem, index);
-    console.log('TCL: LineItems -> basicLine', basicLine);
-
-    props.setBasicLine(basicLine);
 
     if (lineItem.node && lineItem.node.variant && lineItem.node.variant.product.handle) {
       const url = `/products/${lineItem.node.variant.product.handle}`;
@@ -289,7 +285,6 @@ function LineItems(props) {
             gender={gender}
             url={url}
             gifts={props.gifts}
-            basicLine={basicLine}
           />,
         );
       }

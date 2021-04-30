@@ -80,11 +80,6 @@ export const headerCategories = [
             margin_top: '',
           },
           {
-            label: 'Buy 2 Get 1 Free',
-            link: '/collections/2-1free',
-            handle: '2-1free',
-          },
-          {
             label: 'Gifts',
             link: '/pages/gifts-landing-page',
             handle: 'gifts-landing-page',
@@ -269,11 +264,6 @@ export const headerCategories = [
             margin_top: '',
           },
           {
-            label: 'Buy 2 Get 1 Free',
-            link: '/collections/2-1free',
-            handle: '2-1free',
-          },
-          {
             label: 'Gifts',
             link: '/pages/gifts-landing-page',
             handle: 'gifts-landing-page',
@@ -431,11 +421,6 @@ export const headerCategories = [
             handle: 'accessories',
             title_style: 'sub_tt',
             margin_top: '',
-          },
-          {
-            label: 'Buy 2 Get 1 Free',
-            link: '/collections/2-1free',
-            handle: '2-1free',
           },
           {
             label: 'All Accessories',
@@ -648,8 +633,8 @@ export const headerCategories = [
   //   ],
   // },
   {
-    label: `Gift Card`,
-    link: '/products/gift-card',
+    label: `Gifts`,
+    link: '/pages/gifts-landing-page',
     data_single: 'link',
   },
   {

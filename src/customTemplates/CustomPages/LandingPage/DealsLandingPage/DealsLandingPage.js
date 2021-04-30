@@ -94,7 +94,7 @@ const DealsLandingPage = (props) => {
           </Link>
         </div>
         <div className="l-collection">
-          <div className="sec-width">
+          <div className="sec-width col-box-s">
             <div className="view-more">
               <Link to={sec2Data.handle}>{secText.moreBtn}</Link>
             </div>
@@ -144,7 +144,7 @@ const DealsLandingPage = (props) => {
           </Link>
         </div>
         <div className="l-collection">
-          <div className="sec-width">
+          <div className="sec-width col-box-s">
             <div className="view-more">
               <Link to={sec3Data.handle}>{secText.moreBtn}</Link>
             </div>
@@ -194,7 +194,7 @@ const DealsLandingPage = (props) => {
           </Link>
         </div>
         <div className="l-collection">
-          <div className="sec-width">
+          <div className="sec-width col-box-s">
             <div className="view-more">
               <Link to={sec4Data.handle}>{secText.moreBtn}</Link>
             </div>
@@ -217,9 +217,9 @@ const DealsLandingPage = (props) => {
           <div className="box-lay">
             <div className="grid-col">
               <div className="img-box">
-                <img src={sec6Data.imgCover} alt={sec6Data.title}></img>
+                <img className="border-l" src={sec6Data.imgCover} alt={sec6Data.title}></img>
               </div>
-              <div className="details-box">
+              <div className="details-box border-r">
                 <h1>{sec6Data.title}</h1>
                 <p>{sec6Data.centerText}</p>
                 <div className="read-btn">
@@ -234,15 +234,15 @@ const DealsLandingPage = (props) => {
         <div className="sec-width">
           <div className="box-lay">
             <div className="grid-col">
-              <div className="details-box">
+              <div className="details-box border-l">
                 <h1>{sec7Data.title}</h1>
                 <p>{sec7Data.centerText}</p>
                 <div className="read-btn">
                   <Link to={sec7Data.handle}>{sec7Data.btnText}</Link>
                 </div>
               </div>
-              <div className="img-box">
-                <img src={sec7Data.imgCover} alt={sec7Data.title}></img>
+              <div className="img-box grid-box-end">
+                <img className="border-r" src={sec7Data.imgCover} alt={sec7Data.title}></img>
               </div>
             </div>
           </div>

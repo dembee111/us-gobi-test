@@ -31,7 +31,6 @@ function InnerContent(props) {
     errorPolicy: 'all',
   });
   const [isGiftAdded, setIsGiftAdded] = useState(false);
-  const [basicLine, setBasicLine] = useState({});
 
   useEffect(() => {
     //get gift box
@@ -113,8 +112,7 @@ function InnerContent(props) {
   return (
     <div>
       <div className="drawer__inner">
-        <div className={basicLine.count > 0 ? 'footer_accordion open' : 'footer_accordion disable'}>
-          {/* disable */}
+        {/* <div className={basicLine.count > 0 ? 'footer_accordion open' : 'footer_accordion disable'}>
           <div className="detail custom_price_bar">
             <div className="tc_step">
               {basicLine.count > 2 ? (
@@ -182,7 +180,7 @@ function InnerContent(props) {
               )}
             </div>
 
-            {/* <ProgressBar percent={calPercentageProgressBar(basicLine.count)}>
+             <ProgressBar percent={calPercentageProgressBar(basicLine.count)}>
               <Step>
                 {() => (
                   <div className="tc_step">
@@ -229,32 +227,28 @@ function InnerContent(props) {
                 )}
               </Step>
               <Step>{() => <div className="tc_step"></div>}</Step>
-            </ProgressBar> */}
+            </ProgressBar> 
           </div>
-        </div>
-        <div
-          id="CartContainer"
-          style={basicLine.count > 2 ? { height: 'calc(100vh - 300px)' } : { height: 'calc(100vh - 334px)' }}
-        >
+        </div> */}
+        <div id="CartContainer">
           <LineItems
             setGiftCollected={props.setGiftCollected}
             setNextGift={props.setNextGift}
             gifts={props.gifts}
             giftOptions={props.giftOptions}
-            setBasicLine={setBasicLine}
           />
           {props.checkout &&
-          props.checkout.lineItems &&
-          props.checkout.lineItems.edges &&
-          !hasGiftBox(props.checkout.lineItems.edges) &&
-          Number(props.checkout.subtotalPriceV2.amount) > 99 &&
-          getGiftBoxData &&
-          getGiftBoxData.productByHandle &&
-          getGiftBoxData.productByHandle.variants &&
-          getGiftBoxData.productByHandle.variants.edges &&
-          getGiftBoxData.productByHandle.variants.edges[0] &&
-          getGiftBoxData.productByHandle.variants.edges[0].node &&
-          getGiftBoxData.productByHandle.variants.edges[0].node ? (
+            props.checkout.lineItems &&
+            props.checkout.lineItems.edges &&
+            !hasGiftBox(props.checkout.lineItems.edges) &&
+            Number(props.checkout.subtotalPriceV2.amount) > 99 &&
+            getGiftBoxData &&
+            getGiftBoxData.productByHandle &&
+            getGiftBoxData.productByHandle.variants &&
+            getGiftBoxData.productByHandle.variants.edges &&
+            getGiftBoxData.productByHandle.variants.edges[0] &&
+            getGiftBoxData.productByHandle.variants.edges[0].node &&
+            getGiftBoxData.productByHandle.variants.edges[0].node ? (
             <div className="giftbox">
               <button
                 aria-label="Add to gift box to cart"
@@ -275,7 +269,7 @@ function InnerContent(props) {
             </div>
           ) : null}
         </div>
-      </div>
+      </div >
       <div className="drawer__footer drawer__footer--fixed appear-animation appear-delay-5">
         <div className="cart-footer">
           {/* <GiftSection setIsGiftAdded={setIsGiftAdded} isMini={true} /> */}
@@ -297,6 +291,6 @@ function InnerContent(props) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

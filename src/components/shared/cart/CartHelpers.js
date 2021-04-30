@@ -41,7 +41,6 @@ export function isGiftShawlCollection(product) {
 }
 
 export function handleCheckPrice(deals) {
-  console.log("TCL: handleCheckPrice -> deals", deals.giftbox.isOpen)
   let count = 0
   let isCountedgift = 0
   if (deals.giftbox.isOpen) {
@@ -51,7 +50,6 @@ export function handleCheckPrice(deals) {
       store()
         .getState()
         .checkout.lineItems.edges.map((lineItem) => {
-          console.log("TCL: handleCheckPrice -> lineItem", lineItem)
           // if (lineItem.node.variant.presentmentPrices[0].node.price.amount >= 199) {
           //   count++
           // }
@@ -1143,7 +1141,6 @@ export function updateGiftVariant(newSizeVariants) {
  */
 
 export function isGift(lineItem) {
-  console.log("TCL: isGift -> lineItem", lineItem)
   let isGiftItem = false;
   if (lineItem && lineItem.node.variant && lineItem.node.variant.product && lineItem.node.variant.product.tags) {
     for (let tag of lineItem.node.variant.product.tags) {
@@ -1539,6 +1536,33 @@ export function hasGiftScarf(lineItems) {
     for (let lineItem of lineItems) {
       if (lineItem && lineItem.node && lineItem.node.variant && lineItem.node.variant.product) {
         if (isGiftScarf(lineItem.node)) {
+          result = true;
+        }
+      }
+    }
+    return result;
+  }
+}
+
+export function isGiftCard20(lineItem) {
+  let result = false;
+  let product = lineItem.variant.product;
+  if (product && product.tags) {
+    for (let tag of product.tags) {
+      if (tag === 'gift_card') {
+        result = true;
+      }
+    }
+  }
+  return result;
+}
+
+export function hasGiftCard20(lineItems) {
+  if (lineItems) {
+    let result = false;
+    for (let lineItem of lineItems) {
+      if (lineItem && lineItem.node && lineItem.node.variant && lineItem.node.variant.product) {
+        if (isGiftCard20(lineItem.node) && lineItems.length === 1) {
           result = true;
         }
       }

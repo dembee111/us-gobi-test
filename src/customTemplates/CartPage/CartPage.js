@@ -6,13 +6,16 @@ import { useLazyQuery } from '@apollo/client';
 import { Link } from 'gatsby';
 import LineItems from './LineItems';
 import { qtyCount } from '../../components/shared/cart/CartHelpers';
-import { formatPrice, handleCheckBasicCollection, isGift, hasGiftScarf, handleCheckPrice, hasGiftBox, handleCheckGift } from '../../components/shared/cart/CartHelpers';
+import { formatPrice, handleCheckBasicCollection, hasGiftCard20, isGift, hasGiftScarf, handleCheckPrice, hasGiftBox, handleCheckGift } from '../../components/shared/cart/CartHelpers';
 import GiftOptions from './GiftOptions';
 import { getProductGender, productSizeParser } from '../ProductPage/ProductHelpers';
 import { getGiftProducts } from '../../components/shared/query/query';
 import SideDrawer from "./SideDrawer"
 import SideDrawer1 from "./SideDrawer1"
-import { getGiftBox } from '../../components/shared/query/query';
+import { getGiftBox, getProductsFromCollectionLowPrice } from '../../components/shared/query/query';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import { Swiper, Slide } from 'react-dynamic-swiper';
 
 const initialDeals = {
   giftbox: {
@@ -31,17 +34,18 @@ const initialDeals = {
   }
 }
 const Cart = (props) => {
-
-  const edges = props.checkout.lineItems.edges || [];
-
   let giftboxImage = "https://cdn.shopify.com/s/files/1/0098/6044/8292/files/giftbox-pic.png?v=1619688976"
   let giftscarfImage = "https://cdn.shopify.com/s/files/1/0098/6044/8292/files/giftscarf-us.png?v=1619689189"
   const [getGiftBoxQuery, { data: getGiftBoxData, error: getGiftBoxError }] = useLazyQuery(getGiftBox, {
     errorPolicy: 'all',
   });
+  const [getProductsFromCollectionLowPriceQuery, { data: getProductsFromCollectionLowPriceSuccess, error: getProductsFromCollectionLowPriceError }] = useLazyQuery(getProductsFromCollectionLowPrice);
   function goToCheckout() {
     window.location.assign(props.checkout.webUrl);
   }
+
+  const edges = props.checkout.lineItems.edges || [];
+
   const [deals, setDeals] = useState(initialDeals);
 
   const [optionBtn, setOptionBtn] = useState(false);
@@ -56,6 +60,15 @@ const Cart = (props) => {
         currencyCode: props.currency.currencyCode,
       },
     })
+
+    getProductsFromCollectionLowPriceQuery({
+      variables: {
+        handle: "80-less-than",
+        currencyCode: props.currency.currencyCode,
+        first: 6
+      },
+    })
+
   }, []);
 
   useEffect(() => {
@@ -91,7 +104,14 @@ const Cart = (props) => {
       tur.giftbox.product = [datas]
       setDeals(tur)
     }
-  }, [getGiftBoxData, getGiftBoxError]);
+
+    if (getProductsFromCollectionLowPriceError) {
+      console.log('getGiftBoxError', getGiftBoxError);
+    } else if (getProductsFromCollectionLowPriceSuccess) {
+      console.log(getProductsFromCollectionLowPriceSuccess, "hdfkjdhsajhfkjads")
+    }
+
+  }, [getGiftBoxData, getGiftBoxError, getProductsFromCollectionLowPriceSuccess, getProductsFromCollectionLowPriceError]);
 
   useEffect(() => {
     allPagesEvent();
@@ -120,7 +140,6 @@ const Cart = (props) => {
   function allCheckoutLineItems() {
     let list = []
     props.checkout && props.checkout.lineItems && props.checkout.lineItems.edges && props.checkout.lineItems.edges.map((lineItem, index) => {
-      let basicLine = handleCheckBasicCollection(lineItem, index);
 
       let size = '';
       let color = '';
@@ -159,7 +178,6 @@ const Cart = (props) => {
           size={size}
           gender={gender}
           currency={props.currency}
-          basicLine={basicLine}
           optionBtn={optionBtn}
           setOptionBtn={setOptionBtn}
         />
@@ -195,6 +213,7 @@ const Cart = (props) => {
           {props.checkout &&
             props.checkout.lineItems &&
             props.checkout.lineItems.edges &&
+            !hasGiftCard20(props.checkout.lineItems.edges) &&
             !hasGiftScarf(props.checkout.lineItems.edges) &&
             Number(props.checkout.subtotalPriceV2.amount) >= 79 && <GiftOptions title={"Gift Scarf"} desc={"Add a gift scarf"} giftImage={giftscarfImage} setRightSide={setRightSide} />}
           <br />
@@ -202,6 +221,7 @@ const Cart = (props) => {
             props.checkout.lineItems &&
             props.checkout.lineItems.edges &&
             !hasGiftBox(props.checkout.lineItems.edges) &&
+            !hasGiftCard20(props.checkout.lineItems.edges) &&
             Number(props.checkout.subtotalPriceV2.amount) > 199 && (
               <GiftOptions title={"Gift box"} desc={"Add a gift box"} giftImage={giftboxImage} setRightSide={setRightSide1} />
             )}
@@ -257,11 +277,102 @@ const Cart = (props) => {
                 <span>Secure Payment</span>
               </div>
               <div className="button">
-                <button onClick={goToCheckout} className="checkout_btn" disabled={props.checkout.subtotalPriceV2.amount === 0 || !props.checkout || edges.length === 0}>checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
               </div>
               <div className={`button mobile ${optionBtn ? 'dl-none' : ''}`}>
-                <button onClick={goToCheckout} className="checkout_btn" disabled={props.checkout.subtotalPriceV2.amount === 0 || !props.checkout || edges.length === 0}>checkout</button>
+                <button onClick={goToCheckout} className="checkout_btn">checkout</button>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="cart_collection-slider">
+          <div className="tt_more">
+            <p className="bg_tt">
+              {getProductsFromCollectionLowPriceSuccess && getProductsFromCollectionLowPriceSuccess.collectionByHandle ? (
+                <Link to={`/collections/${getProductsFromCollectionLowPriceSuccess.collectionByHandle.handle}`} title={getProductsFromCollectionLowPriceSuccess.collectionByHandle.title}>
+                  {`You Might Also Like`}
+                </Link>
+              ) : (
+                <span>{`You Might Also Like`}</span>
+              )}
+            </p>
+            {getProductsFromCollectionLowPriceSuccess && getProductsFromCollectionLowPriceSuccess.collectionByHandle ? (
+              <div className="view_all">
+                <Link to={`/collections/${getProductsFromCollectionLowPriceSuccess.collectionByHandle.handle}`} title={getProductsFromCollectionLowPriceSuccess.collectionByHandle.title}>
+                  View All
+                </Link>
+              </div>
+            ) : null}
+          </div>
+          <div className="cart-slider">
+            <Swiper
+              swiperOptions={{
+                slidesPerView: 4,
+                spaceBetween: 4,
+                simulateTouch: false,
+                navigation: {
+                  nextEl: '.black_slide-next',
+                  prevEl: '.black_slide-prev',
+                },
+                breakpoints: {
+                  767: {
+                    loop: true,
+                    slidesPerView: 2,
+                    spaceBetween: 4,
+                    simulateTouch: true,
+                    navigation: {
+                      nextEl: '.black_slide-next',
+                      prevEl: '.black_slide-prev',
+                    },
+                  },
+                },
+              }}
+              loop={false}
+              navigation={false}
+              pagination={false}
+            >
+              {getProductsFromCollectionLowPriceSuccess && getProductsFromCollectionLowPriceSuccess.collectionByHandle.products.edges.map((item, i) => (
+                <Slide className="Demo-swiper__slide" key={i}>
+                  <Link to={`/products/${item.node.handle}`} title={item.node.title}>
+                    <div className="slide_box">
+                      <div className="img">
+                        <img
+                          alt={item.node.title}
+                          data-sizes="auto"
+                          src={item.node.images.edges[0].node.originalSrc.replace('.jpg', '_120x.jpg')}
+                          data-src={item.node.images.edges[0].node.originalSrc.replace('.jpg', '_1200x.jpg')}
+                          className="lazyload blur-up"
+                        />
+                      </div>
+                      <div className="detail">
+                        <p className="tt">{item.node.title}</p>
+                        {item.node.variants.edges[0].node.presentmentPrices.edges[0].node &&
+                          item.node.variants.edges[0].node.presentmentPrices.edges[0].node.compareAtPrice.amount === item.node.variants.edges[0].node.presentmentPrices.edges[0].node.price.amount ? (
+                          <div className="price">
+                            <p className="price-current">{props.currency.currencySymbol}{' '}{item.node.variants.edges[0].node.priceV2.amount}</p>
+                          </div>
+                        ) : (
+                          <div className="price sale">
+                            <p className="price-current">{props.currency.currencySymbol}{' '}{item.node.variants.edges[0].node.presentmentPrices.edges[0].node.compareAtPrice.amount}</p>
+                            <p className="price-current red">{props.currency.currencySymbol}{' '}{item.node.variants.edges[0].node.presentmentPrices.edges[0].node.price.amount}</p>
+                          </div>
+                        )}
+
+                      </div>
+                    </div>
+                  </Link>
+                </Slide>
+              ))}
+            </Swiper>
+            <div className="black_slide-prev">
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 12.8701L1 6.87012L7 0.870117" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className="black_slide-next">
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 12.8701L1 6.87012L7 0.870117" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
           </div>
         </div>

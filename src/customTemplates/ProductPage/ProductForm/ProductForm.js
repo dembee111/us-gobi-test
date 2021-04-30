@@ -449,7 +449,7 @@ function ProductForm(props) {
     <div className="tc_new-product" ref={cartref}>
       {props.baseProductData.id && props.baseProductData.variants && (
         <div className="productForm" style={{ width: props.formWidth }}>
-          {props.baseProductData.tags.map((item, key) => {
+          {/* {props.baseProductData.tags.map((item, key) => {
             if (item === `2+1Free`) {
               return (
                 <div className="free_tagMobile" key={key}>
@@ -457,7 +457,7 @@ function ProductForm(props) {
                 </div>
               );
             }
-          })}
+          })} */}
           <div className="tc_product_title">
             <div className="productTitle">
               <h1>{props.baseProductData.title}</h1>

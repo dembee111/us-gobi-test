@@ -4,9 +4,9 @@ import AccountSideBar from '../AccountSideBar/AccountSideBar';
 import AccountMobileHeader from '../AccountMobileHeader/AccountMobileHeader';
 import useLoginHook from '../../../hooks/useLoginHook';
 import ListOrders from './ListOrders';
+import store from '../../../state/createStore';
 import AccountOrdersPage from './AccountOrderViewPage';
 import axios from 'axios';
-import store from '../../../state/createStore';
 import moment from 'moment';
 import _ from 'lodash';
 const mapStateToProps = (state) => ({
@@ -44,7 +44,6 @@ export default connect(mapStateToProps)((props) => {
     let cid = store().getState().customer && store().getState().customer.id && store().getState().customer.id
     var id = atob(cid);
   }
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

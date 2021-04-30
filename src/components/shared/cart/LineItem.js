@@ -33,7 +33,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps)(LineItem);
 function LineItem(props) {
-  const basicLine = props.basicLine && props.basicLine;
 
   const [showChange, setShowChange] = useState();
   const [showSize, setShowSize] = useState();
@@ -173,38 +172,15 @@ function LineItem(props) {
                       )}{' '}
                     </span>
                   ) : null}
-                  {/* <span
+                  <span
                     className="so-unit-price"
                     data-open-accessibility-text-original="13.6px"
                     style={isSalePrice() == true ? { color: '#AD0020' } : null}
                   >
                     {props.currency.currencySymbol}
                     {formatPrice(props.lineItem.node.variant.presentmentPrices.edges[0].node.price.amount)}
-                  </span> */}
-                  {basicLine.res === true ? (
-                    <>
-                      <span className="so-unit-price" style={{ marginLeft: '5px' }}>
-                        {props.currency.currencySymbol}
-                        <del>
-                          {formatPrice(props.lineItem.node.variant.presentmentPrices.edges[0].node.price.amount)}{' '}
-                        </del>
-                      </span>
-                      &nbsp;
-                      <span className="so-unit-price" style={{ color: '#AD0020' }}>
-                        {props.currency.currencySymbol}
-                        {'0.0'}{' '}
-                      </span>
-                    </>
-                  ) : (
-                    <span
-                      className="so-unit-price"
-                      data-open-accessibility-text-original="13.6px"
-                      style={isSalePrice() == true ? { color: '#AD0020' } : null}
-                    >
-                      {props.currency.currencySymbol}
-                      {formatPrice(props.lineItem.node.variant.presentmentPrices.edges[0].node.price.amount)}
-                    </span>
-                  )}
+                  </span>
+
                 </span>
               ) : null}
               {(props.isGiftItem || isFreeGiftCard(props.lineItem.node)) &&
@@ -322,7 +298,6 @@ function LineItem(props) {
                 isGiftItem={props.isGiftItem}
                 lineItem={props.lineItem}
                 setHasExceededQuantity={setHasExceededQuantity}
-                basicLine={basicLine}
               />
             ) : null}
             {props.isGiftItem ? (

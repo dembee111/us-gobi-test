@@ -142,96 +142,55 @@ const Cart = (props) => {
   if (props.checkout) {
     return (
       <div className="cart">
-        {!props.isCartDrawerOpen && props.justAdded && props.justAdded.product && props.justAdded.variant ? (
-          <div className="add_cart-action">
-            <div className="tt">
-              <h1>Just added</h1>
-            </div>
-            <div className="detail">
-              <div className="img">
-                {props.justAdded.product.images &&
-                  props.justAdded.product.images.edges &&
-                  props.justAdded.product.images.edges[0] &&
-                  props.justAdded.product.images.edges[0].node &&
-                  props.justAdded.product.images.edges[0].node.originalSrc ? (
-                  <Image
-                    src={props.justAdded.product.images.edges[0].node.originalSrc}
-                    alt={props.justAdded.product.images.edges[0].node.altText}
-                  />
-                ) : null}
+        {props.justAdded && props.justAdded.product && props.justAdded.variant ? (
+          <div className="cart_add-side">
+            <div className="add_cart-action">
+              <div className="tt_icon">
+                <p className="tt">Just added</p>
+                <div className="icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#282828" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#282828" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
-              <div className="body">
-                <h2>{props.justAdded.product.title}</h2>
-                <p>{props.justAdded.variant.title}</p>
-                <span>
-                  {props.currency.currencyCode}{' '}
-                  {props.justAdded.variant.presentmentPrices &&
-                    props.justAdded.variant.presentmentPrices.edges &&
-                    props.justAdded.variant.presentmentPrices.edges[0] &&
-                    props.justAdded.variant.presentmentPrices.edges[0].node &&
-                    props.justAdded.variant.presentmentPrices.edges[0].node.price &&
-                    formatPrice(props.justAdded.variant.presentmentPrices.edges[0].node.price.amount)}
-                </span>
-              </div>
-            </div>
-            <div className="goTocart">
-              <a type="button" className="open_cartBtn" aria-label="Go to Cart" href="/cart">
-                Go to Cart
-              </a>
-            </div>
-          </div>
-        ) : null}
-        <div
-          className={props.isCartDrawerOpen ? 'opaque-background block' : 'opaque-background'}
-          onClick={() => props.closeCart()}
-        />
-        <div className={props.isCartDrawerOpen ? 'sidepanel open' : 'sidepanel'}>
-          {props.checkoutLineItemsReplaceLoading ? <div className="loading-opaque-background" /> : null}
-          <div id="CartDrawer" className="drawer drawer--right drawer--has-fixed-footer drawer--is-open" tabIndex="-1">
-            <div className="drawer__fixed-header">
-              <div className="drawer__header appear-animation appear-delay-1">
-                <Link
-                  aria-label="View Cart"
-                  to="/cart"
-                  className="h2 drawer__title"
-                  onClick={() => {
-                    props.closeCart();
-                  }}
-                >
-                  View Cart
-                  {props.checkout &&
-                    props.checkout.lineItems &&
-                    props.checkout.lineItems.edges &&
-                    props.checkout.lineItems.edges.length ? (
-                    <span>({props.checkout.lineItems.edges.length} items)</span>
+              <div className="detail">
+                <div className="img">
+                  {props.justAdded.product.images &&
+                    props.justAdded.product.images.edges &&
+                    props.justAdded.product.images.edges[0] &&
+                    props.justAdded.product.images.edges[0].node &&
+                    props.justAdded.product.images.edges[0].node.originalSrc ? (
+                    <Image
+                      src={props.justAdded.product.images.edges[0].node.originalSrc}
+                      alt={props.justAdded.product.images.edges[0].node.altText}
+                    />
                   ) : null}
-                </Link>
-                <a
-                  type="button"
-                  className="drawer__close-button js-drawer-close navigable"
-                  aria-label="Close Cart"
-                  onClick={() => props.closeCart()}
-                >
-                  <div className="close_icon">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17 1L1 17" stroke="#212121" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M1 1L17 17" stroke="#212121" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
+                </div>
+                <div className="body">
+                  <h2>{props.justAdded.product.title}</h2>
+                  <span>
+                    {props.currency.currencySymbol}{' '}
+                    {props.justAdded.variant.presentmentPrices &&
+                      props.justAdded.variant.presentmentPrices.edges &&
+                      props.justAdded.variant.presentmentPrices.edges[0] &&
+                      props.justAdded.variant.presentmentPrices.edges[0].node &&
+                      props.justAdded.variant.presentmentPrices.edges[0].node.price &&
+                      formatPrice(props.justAdded.variant.presentmentPrices.edges[0].node.price.amount)}
+                  </span>
+                  {props.justAdded.variant && props.justAdded.variant.selectedOptions.map((item, key) => (
+                    <p key={key}>{item.name} <span>{item.value}</span></p>
+                  ))}
+                </div>
+              </div>
+              <div className="goTocart">
+                <a type="button" className="open_cartBtn" aria-label="Go to Cart" href="/cart">
+                  Go to Cart
                 </a>
               </div>
             </div>
-            <InnerContent
-              nextGift={nextGift}
-              setNextGift={setNextGift}
-              setGiftCollected={setGiftCollected}
-              prices={prices}
-              giftCollected={giftCollected}
-              giftOptions={giftOptions}
-              gifts={gifts}
-            />
           </div>
-        </div>
+        ) : null}
       </div>
     );
   }

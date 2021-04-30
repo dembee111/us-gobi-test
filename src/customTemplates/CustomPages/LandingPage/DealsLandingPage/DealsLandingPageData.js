@@ -5,7 +5,7 @@ export const sec1Data = {
   imgCover: 'https://cdn.shopify.com/s/files/1/1953/2845/files/web-cover1.jpg?v=1619661938',
   imgCoverMobile: 'https://cdn.shopify.com/s/files/1/1953/2845/files/mobile-cover1.jpg?v=1619661938',
   altText: 'Dresses & Cardigans Sale',
-  handle: '/',
+  handle: '/collections/sale',
 };
 
 export const sec2Data = {

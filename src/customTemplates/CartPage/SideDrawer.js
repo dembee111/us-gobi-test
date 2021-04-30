@@ -8,6 +8,7 @@ const SideDrawer = (props) => {
     const [selectedProduct, setSelectedProduct] = useState()
     const { products, rightSide } = props
     const [selectGift, setSelectGift] = useState();
+    const [sensorWord, setSensorWord] = useState(false);
 
     const toggleClass = (product, index) => {
         setSelectedProduct(product)
@@ -22,6 +23,7 @@ const SideDrawer = (props) => {
         setSelectedVariant(event.target.value)
     }
     const handlePrepareToCart = () => {
+
         let lastVariant;
 
         // selectedProduct.variants.edges.map((variant, i) => {
@@ -55,7 +57,8 @@ const SideDrawer = (props) => {
         })
         return maxIndex;
     }
-
+    console.log(sensorWord)
+    console.log(selectedProduct)
     return (
         <div className={`card-modal ${rightSide ? 'open' : ''}`}>
             <div className="modal-back" onClick={() => props.setRightSide(false)}></div>
@@ -71,15 +74,12 @@ const SideDrawer = (props) => {
                 </div>
                 <div className="card-side-body">
                     <div className="description">
-                        <p>{`Here's a treat! A complimentary CASHMERE SCARF with your order.
-
-                            We're gifting an ultra-soft, cozy scarf to help you feel warm on the outside and feel good on the inside.
-
-                            Select your gift to add to bag.`}</p>
+                        <p>{`Here's a treat! A complimentary CASHMERE SCARF with your order.\nWe're gifting an ultra-soft, cozy scarf to help you feel warm on the outside and feel good on the inside.\n`}</p>
+                        <p>{`Select your gift to add to bag.`}</p>
                     </div>
                     <div className="gift-list">
                         {products && products.map((product, i) => (
-                            <div key={i} className={`list-box ${selectGift === i ? 'selected' : ''}`} onClick={() => toggleClass(product, i)}>
+                            <div key={i} className={`list-box ${selectGift === i ? 'selected' : ''}`} onClick={() => toggleClass(product, i)} >
                                 <div className="img">
                                     <img
                                         src={product.variants.edges[handleImageVariant(product)].node.image.src}
@@ -90,12 +90,12 @@ const SideDrawer = (props) => {
                                 <div className="detail">
                                     <div className="top">
                                         <p className="pr_tt">{capitalize(product.title)}</p>
-                                        <div className="price">
+                                        {/* <div className="price">
                                             <div className="price-box">
                                                 <p className="sale-price">{props.currency.currencySymbol}{product.variants.edges[0].node.presentmentPrices.edges[0].node.price.amount}</p>
                                                 <p className="price-default sale">{props.currency.currencySymbol} 0.0</p>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="color">
                                             <p className="color-tt">Color</p>
                                             <div className="color-text">{product.variants.edges[0].node.selectedOptions[1].value}</div>
@@ -127,17 +127,20 @@ const SideDrawer = (props) => {
                                                             })}
                                                         </select>
                                                     )}
-                                                    <div className="custom_select-icon">
-                                                        <svg
-                                                            width="14"
-                                                            height="8"
-                                                            viewBox="0 0 14 8"
-                                                            fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <path d="M1 1L7 7L13 1" stroke="#4F5255" strokeLinecap="round" strokeLinejoin="round" />
-                                                        </svg>
-                                                    </div>
+                                                    {product.productType === "Gift20" ? "" : (
+                                                        <div className="custom_select-icon">
+                                                            <svg
+                                                                width="14"
+                                                                height="8"
+                                                                viewBox="0 0 14 8"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <path d="M1 1L7 7L13 1" stroke="#4F5255" strokeLinecap="round" strokeLinejoin="round" />
+                                                            </svg>
+                                                        </div>
+                                                    )}
+
                                                 </div>
                                             </div>
                                             {/* <div className="quantity">
@@ -181,7 +184,7 @@ const SideDrawer = (props) => {
                 </div>
                 <div className="card-side-footer">
                     <div className="footer-button">
-                        <button disabled={!selectedProduct && true} onClick={handlePrepareToCart} className="apply-btn">Apply</button>
+                        <button className="apply-btn" disabled={!selectedProduct && true} onClick={handlePrepareToCart}>Apply</button>
                     </div>
                 </div>
             </div>

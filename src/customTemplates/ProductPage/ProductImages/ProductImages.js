@@ -118,14 +118,14 @@ function ProductImages(props) {
                     height={props.imageWidth * 1.5}
                   />
                 )}
-                {freeTag ? <div className="free_tag">2+1 FRee</div> : null}
+                {/* {freeTag ? <div className="free_tag">2+1 FRee</div> : null} */}
               </div>
             ))}
           </div>
         </div>
 
         <div className="tc_mobile mobile_img_slide">
-          {freeTag ? <div className="free_tag-Tablet">2+1 FRee</div> : null}
+          {/* {freeTag ? <div className="free_tag-Tablet">2+1 FRee</div> : null} */}
           <Swiper
             swiperOptions={{
               slidesPerView: '1',
