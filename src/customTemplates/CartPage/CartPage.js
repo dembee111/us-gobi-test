@@ -70,7 +70,7 @@ const Cart = (props) => {
     })
 
   }, []);
-
+  console.log("")
   useEffect(() => {
     if (getGiftProductError) {
       console.log("")
